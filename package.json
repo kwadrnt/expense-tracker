@@ -1,0 +1,27 @@
+{
+  "name": "expense-tracker-back-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix ."
+  },
+  "author": "alfred",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "graphql-iso-date": "^3.6.1",
+    "mongodb": "^3.1.8"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2"
+  }
+}
