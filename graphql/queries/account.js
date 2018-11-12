@@ -6,13 +6,13 @@ const {
     GraphQLString,
 } = require('graphql')
 
-const db = require('../../mongo/index.js')
-
-const { 
+const {
     AccountMutationInputType,
     AccountQueryInputType,
     AccountType,
 } = require('../types/account.js')
+
+const Accounts = require('../../db/schema/account.js')
 
 module.exports = {}
 
@@ -26,19 +26,12 @@ module.exports.accountQueries = {
         args: {
             input: { type: new GraphQLNonNull(AccountQueryInputType) },
         },
-        resolve: (rootValue, { input }) => {
-            return {}
-        },
+        resolve: (rootValue, { input }) => Accounts.findOne({ id: input.id }, (err, account) => account),
     },
     getAccounts: {
         type: new GraphQLList(AccountType),
         description: 'Get all accounts',
-        args: {
-            input: { type: new GraphQLNonNull(AccountQueryInputType) },
-        },
-        resolve: (rootValue, { input }) => {
-            return []
-        },
+        resolve: (rootValue, { input }) => Accounts.find({}, (err, accounts) => accounts),
     },
 }
 
@@ -53,7 +46,10 @@ module.exports.accountMutations = {
             input: { type: new GraphQLNonNull(AccountMutationInputType) },
         },
         resolve: (rootValue, { input }) => {
-            return {}
+            return {
+                id: 2304384,
+                name: input.name,
+            }
         },
     },
     deleteAccount: {

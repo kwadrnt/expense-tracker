@@ -41,7 +41,7 @@ module.exports.AccountMutationInputType = new GraphQLInputObjectType({
     name: 'AccountMutationInputType',
     description: 'Account payload definition for mutations',
     fields: () => ({
-        accountId: { type: GraphQLID },
+        id: { type: GraphQLID },
         name: { type: GraphQLString },
         balance: { type: GraphQLFloat },
     }),
@@ -51,7 +51,7 @@ module.exports.AccountQueryInputType = new GraphQLInputObjectType({
     name: 'AccountQueryInputType',
     description: 'Account payload definition for queries',
     fields: () => ({
-        accountId: { type: GraphQLID },
+        id: { type: GraphQLID },
     }),
 })
 
