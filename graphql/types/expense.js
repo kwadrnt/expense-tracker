@@ -17,8 +17,8 @@ module.exports.ExpenseType = new GraphQLObjectType({
     name: 'Expense',
     description: 'This represents an expense',
     fields: () => {
-        const { CategoryType } = require('./category.js')
-        const { AccountType } = require('./account.js')
+        const { CategoryType } = require('./category')
+        const { AccountType } = require('./account')
 
         return {
             id: { type: new GraphQLNonNull(GraphQLID) },

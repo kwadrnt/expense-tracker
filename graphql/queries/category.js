@@ -1,6 +1,6 @@
 const { GraphQLList } = require('graphql')
 
-const { CategoryType } = require('../types/category.js')
+const { CategoryType } = require('../types/category')
 
 module.exports = {}
 

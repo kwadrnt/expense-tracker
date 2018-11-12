@@ -10,9 +10,9 @@ const {
     AccountMutationInputType,
     AccountQueryInputType,
     AccountType,
-} = require('../types/account.js')
+} = require('../types/account')
 
-const Accounts = require('../../db/schema/account.js')
+const Accounts = require('../../db/models/accounts')
 
 module.exports = {}
 

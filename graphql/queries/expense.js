@@ -12,7 +12,7 @@ const {
     ExpenseMutationInputType,
     ExpenseQueryInputType,
     ExpenseType,
-} = require('../types/expense.js')
+} = require('../types/expense')
 
 module.exports = {}
 

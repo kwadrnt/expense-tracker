@@ -1,5 +1,5 @@
 require('dotenv').config()
-require('./db/index.js')
+require('./db')
 
 const express = require('express')
 const graphqlHTTP = require('express-graphql')
