@@ -1,12 +1,15 @@
 const {
     GraphQLID,
-    GraphQLString,
-    GraphQLObjectType,
     GraphQLNonNull,
+    GraphQLObjectType,
+    GraphQLString,
 } = require('graphql')
 
 module.exports = {}
 
+// ****************
+// Constructor Type
+// ****************
 module.exports.CategoryType = new GraphQLObjectType({
     name: 'Category',
     description: 'This represents a category',

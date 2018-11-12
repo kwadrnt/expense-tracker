@@ -1,14 +1,14 @@
-const {
-    GraphQLList,
-} = require('graphql')
+const { GraphQLList } = require('graphql')
 
 const { CategoryType } = require('../types/category.js')
 
-// Queries
 module.exports = {}
 
+// *******
+// QUERIES
+// *******
 module.exports.categoryQueries = {
-    categories: {
+    getCategories: {
         type: new GraphQLList(CategoryType),
         description: 'Get all categories',
         resolve: () => {

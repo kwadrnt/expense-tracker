@@ -1,47 +1,25 @@
 const {
-    GraphQLID,
-    GraphQLString,
     GraphQLFloat,
+    GraphQLID,
     GraphQLList,
-    GraphQLInputObjectType,
     GraphQLNonNull,
+    GraphQLString,
 } = require('graphql')
 
-const { AccountType } = require('../types/account.js')
+const db = require('../../mongo/index.js')
 
-// Input Types
-const AccountQueryInputType = new GraphQLInputObjectType({
-    name: 'AccountQueryInputType',
-    description: 'Account payload definition for queries',
-    fields: () => ({
-        accountId: { type: GraphQLID },
-    }),
-})
+const { 
+    AccountMutationInputType,
+    AccountQueryInputType,
+    AccountType,
+} = require('../types/account.js')
 
-const AccountMutationInputType = new GraphQLInputObjectType({
-    name: 'AccountMutationInputType',
-    description: 'Account payload definition for mutations',
-    fields: () => ({
-        accountId: { type: GraphQLID },
-        name: { type: GraphQLString },
-        balance: { type: GraphQLFloat },
-    }),
-})
-
-// Queries
 module.exports = {}
 
+// *******
+// QUERIES
+// *******
 module.exports.accountQueries = {
-    getAccounts: {
-        type: new GraphQLList(AccountType),
-        description: 'Get all accounts',
-        args: {
-            input: { type: new GraphQLNonNull(AccountQueryInputType) },
-        },
-        resolve: (rootValue, { input }) => {
-            return []
-        },
-    },
     getAccount: {
         type: AccountType,
         description: 'Get a specific account',
@@ -52,10 +30,21 @@ module.exports.accountQueries = {
             return {}
         },
     },
+    getAccounts: {
+        type: new GraphQLList(AccountType),
+        description: 'Get all accounts',
+        args: {
+            input: { type: new GraphQLNonNull(AccountQueryInputType) },
+        },
+        resolve: (rootValue, { input }) => {
+            return []
+        },
+    },
 }
 
-// Mutations
-
+// *********
+// MUTATIONS
+// *********
 module.exports.accountMutations = {
     createAccount: {
         type: AccountType,
@@ -67,9 +56,9 @@ module.exports.accountMutations = {
             return {}
         },
     },
-    updateAccount: {
+    deleteAccount: {
         type: AccountType,
-        description: 'Update an existing account',
+        description: 'Delete an existing account',
         args: {
             input: { type: new GraphQLNonNull(AccountMutationInputType) },
         },
@@ -77,9 +66,9 @@ module.exports.accountMutations = {
             return {}
         },
     },
-    deleteAccount: {
+    updateAccount: {
         type: AccountType,
-        description: 'Delete an existing account',
+        description: 'Update an existing account',
         args: {
             input: { type: new GraphQLNonNull(AccountMutationInputType) },
         },

@@ -1,14 +1,18 @@
 const {
-    GraphQLID,
-    GraphQLString,
     GraphQLFloat,
+    GraphQLID,
+    GraphQLInputObjectType,
     GraphQLList,
-    GraphQLObjectType,
     GraphQLNonNull,
+    GraphQLObjectType,
+    GraphQLString,
 } = require('graphql')
 
 module.exports = {}
 
+// ****************
+// Constructor Type
+// ****************
 module.exports.AccountType = new GraphQLObjectType({
     name: 'Account',
     description: 'This repsents an account',
@@ -29,3 +33,25 @@ module.exports.AccountType = new GraphQLObjectType({
         }
     },
 })
+
+// ***********
+// Input Types
+// ***********
+module.exports.AccountMutationInputType = new GraphQLInputObjectType({
+    name: 'AccountMutationInputType',
+    description: 'Account payload definition for mutations',
+    fields: () => ({
+        accountId: { type: GraphQLID },
+        name: { type: GraphQLString },
+        balance: { type: GraphQLFloat },
+    }),
+})
+
+module.exports.AccountQueryInputType = new GraphQLInputObjectType({
+    name: 'AccountQueryInputType',
+    description: 'Account payload definition for queries',
+    fields: () => ({
+        accountId: { type: GraphQLID },
+    }),
+})
+
