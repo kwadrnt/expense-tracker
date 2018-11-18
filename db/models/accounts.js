@@ -3,7 +3,7 @@ const { Schema } = mongoose
 
 const accountSchema = new Schema(
     {
-        id: Number,
+        id: String,
         name: String,
         balance: {
             type: Number,
