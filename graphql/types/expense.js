@@ -19,24 +19,24 @@ module.exports.ExpenseType = new GraphQLObjectType({
     name: 'Expense',
     description: 'This represents an expense',
     fields: () => {
-        const { CategoryType } = require('./category')
         const { AccountType } = require('./account')
+        const { CategoryType } = require('./category')
 
         return {
             id: { type: new GraphQLNonNull(GraphQLID) },
-            date: { type: new GraphQLNonNull(GraphQLDate) },
-            description: { type: GraphQLString },
-            price: { type: new GraphQLNonNull(GraphQLFloat) },
-            category: {
-                type: CategoryType,
-                description: 'The category this expense is under',
-                resolve: () => ({}),
-            },
             account: {
                 type: AccountType,
                 description: 'The account this expense belongs to',
                 resolve: getAccount,
             },
+            category: {
+                type: CategoryType,
+                description: 'The category this expense is under',
+                resolve: () => ({}),
+            },
+            date: { type: new GraphQLNonNull(GraphQLDate) },
+            description: { type: GraphQLString },
+            price: { type: new GraphQLNonNull(GraphQLFloat) },
         }
     },
 })
@@ -49,8 +49,8 @@ module.exports.ExpenseMutationInputType = new GraphQLInputObjectType({
     description: 'Expense payload definition for mutations',
     fields: () => ({
         id: { type: GraphQLID },
-        category: { type: GraphQLID },
         account: { type: GraphQLID },
+        category: { type: GraphQLID },
         date: { type: GraphQLDate },
         description: { type: GraphQLString },
         price: { type: GraphQLFloat },
@@ -61,9 +61,9 @@ module.exports.ExpenseQueryInputType = new GraphQLInputObjectType({
     name: 'ExpenseQueryInputType',
     description: 'Expense payload definition for queries',
     fields: () => ({
-        expense: { type: GraphQLID },
-        categord: { type: GraphQLID },
+        id: { type: GraphQLID },
         account: { type: GraphQLID },
+        category: { type: GraphQLID },
         date: { type: GraphQLDate },
     }),
 })

@@ -24,6 +24,7 @@ module.exports.AccountType = new GraphQLObjectType({
         return {
             id: {type: new GraphQLNonNull(GraphQLID)},
             name: {type: new GraphQLNonNull(GraphQLString)},
+            // need to calculate balance per fetch
             balance: {type: new GraphQLNonNull(GraphQLFloat)},
             expenses: {
                 type: new GraphQLList(ExpenseType),

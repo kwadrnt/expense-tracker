@@ -1,7 +1,4 @@
-const {
-    GraphQLList,
-    GraphQLNonNull,
-} = require('graphql')
+const { GraphQLList, GraphQLNonNull } = require('graphql')
 
 const {
     AccountMutationInputType,

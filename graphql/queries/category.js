@@ -1,8 +1,8 @@
-const { GraphQLList } = require('graphql')
+const { GraphQLList, GraphQLNonNull } = require('graphql')
 
-const { CategoryType } = require('../types/category')
+const { CategoryType, CategoryQueryInputType } = require('../types/category')
 
-const { findCategories } = require('../resolvers/category')
+const { getCategory, getCategories } = require('../resolvers/category')
 
 module.exports = {}
 
@@ -10,9 +10,17 @@ module.exports = {}
 // QUERIES
 // *******
 module.exports.categoryQueries = {
+    getCategory: {
+        type: CategoryType,
+        description: 'Get a specific category',
+        args: {
+            input: { type: new GraphQLNonNull(CategoryQueryInputType) },
+        },
+        resolve: getCategory,
+    },
     getCategories: {
         type: new GraphQLList(CategoryType),
         description: 'Get all categories',
-        resolve: findCategories,
+        resolve: getCategories,
     },
 }
