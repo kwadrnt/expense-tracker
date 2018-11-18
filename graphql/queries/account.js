@@ -1,9 +1,6 @@
 const {
-    GraphQLFloat,
-    GraphQLID,
     GraphQLList,
     GraphQLNonNull,
-    GraphQLString,
 } = require('graphql')
 
 const {
@@ -12,7 +9,13 @@ const {
     AccountType,
 } = require('../types/account')
 
-const Accounts = require('../../db/models/accounts')
+const {
+    getAccount,
+    getAccounts,
+    createAccount,
+    deleteAccount,
+    updateAccount,
+} = require('../resolvers/account')
 
 module.exports = {}
 
@@ -26,12 +29,12 @@ module.exports.accountQueries = {
         args: {
             input: { type: new GraphQLNonNull(AccountQueryInputType) },
         },
-        resolve: (rootValue, { input }) => Accounts.findOne({ id: input.id }, (err, account) => account),
+        resolve: getAccount,
     },
     getAccounts: {
         type: new GraphQLList(AccountType),
         description: 'Get all accounts',
-        resolve: (rootValue, { input }) => Accounts.find({}, (err, accounts) => accounts),
+        resolve: getAccounts,
     },
 }
 
@@ -45,12 +48,7 @@ module.exports.accountMutations = {
         args: {
             input: { type: new GraphQLNonNull(AccountMutationInputType) },
         },
-        resolve: (rootValue, { input }) => {
-            return {
-                id: 2304384,
-                name: input.name,
-            }
-        },
+        resolve: createAccount,
     },
     deleteAccount: {
         type: AccountType,
@@ -58,9 +56,7 @@ module.exports.accountMutations = {
         args: {
             input: { type: new GraphQLNonNull(AccountMutationInputType) },
         },
-        resolve: (rootValue, { input }) => {
-            return {}
-        },
+        resolve: deleteAccount,
     },
     updateAccount: {
         type: AccountType,
@@ -68,8 +64,6 @@ module.exports.accountMutations = {
         args: {
             input: { type: new GraphQLNonNull(AccountMutationInputType) },
         },
-        resolve: (rootValue, { input }) => {
-            return {}
-        },
+        resolve: updateAccount,
     },
 }

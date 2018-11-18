@@ -8,6 +8,8 @@ const {
     GraphQLString,
 } = require('graphql')
 
+const { getExpenses } = require('../resolvers/account')
+
 module.exports = {}
 
 // ****************
@@ -26,9 +28,7 @@ module.exports.AccountType = new GraphQLObjectType({
             expenses: {
                 type: new GraphQLList(ExpenseType),
                 description: 'List of all Expenses',
-                resolve: () => {
-                    return []
-                },
+                resolve: getExpenses,
             },
         }
     },

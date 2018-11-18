@@ -8,6 +8,8 @@ const {
 } = require('graphql')
 const { GraphQLDate } = require('graphql-iso-date')
 
+const { getAccount } = require('../resolvers/expense')
+
 module.exports = {}
 
 // ****************
@@ -28,16 +30,12 @@ module.exports.ExpenseType = new GraphQLObjectType({
             category: {
                 type: CategoryType,
                 description: 'The category this expense is under',
-                resolve: () => {
-                    return {}
-                },
+                resolve: () => ({}),
             },
             account: {
                 type: AccountType,
                 description: 'The account this expense belongs to',
-                resolve: () => {
-                    return {}
-                },
+                resolve: getAccount,
             },
         }
     },
@@ -50,10 +48,9 @@ module.exports.ExpenseMutationInputType = new GraphQLInputObjectType({
     name: 'ExpenseMutationInputType',
     description: 'Expense payload definition for mutations',
     fields: () => ({
-        // userId: { type: new GraphQLNonNull(GraphQLID) },
-        expenseId: { type: GraphQLID },
-        categoryId: { type: GraphQLID },
-        accountId: { type: GraphQLID },
+        id: { type: GraphQLID },
+        category: { type: GraphQLID },
+        account: { type: GraphQLID },
         date: { type: GraphQLDate },
         description: { type: GraphQLString },
         price: { type: GraphQLFloat },
@@ -64,10 +61,9 @@ module.exports.ExpenseQueryInputType = new GraphQLInputObjectType({
     name: 'ExpenseQueryInputType',
     description: 'Expense payload definition for queries',
     fields: () => ({
-        // userId: { type: new GraphQLNonNull(GraphQLID) },
-        expenseId: { type: GraphQLID },
-        categoryId: { type: GraphQLID },
-        accountId: { type: GraphQLID },
+        expense: { type: GraphQLID },
+        categord: { type: GraphQLID },
+        account: { type: GraphQLID },
         date: { type: GraphQLDate },
     }),
 })

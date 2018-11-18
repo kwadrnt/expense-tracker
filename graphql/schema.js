@@ -1,4 +1,4 @@
-const { GraphQLList, GraphQLObjectType, GraphQLSchema } = require('graphql')
+const { GraphQLObjectType, GraphQLSchema } = require('graphql')
 
 const { accountMutations, accountQueries } = require('./queries/account')
 const { categoryQueries } = require('./queries/category')

@@ -1,12 +1,7 @@
 const {
-    GraphQLFloat,
-    GraphQLID,
     GraphQLList,
     GraphQLNonNull,
-    GraphQLObjectType,
-    GraphQLString,
 } = require('graphql')
-const { GraphQLDate } = require('graphql-iso-date')
 
 const {
     ExpenseMutationInputType,
@@ -14,6 +9,13 @@ const {
     ExpenseType,
 } = require('../types/expense')
 
+const {
+    getExpense,
+    getExpenses,
+    createExpense,
+    updateExpense,
+    deleteExpense,
+} = require('../resolvers/expense')
 module.exports = {}
 
 // *******
@@ -26,19 +28,12 @@ module.exports.expenseQueries = {
         args: {
             input: { type: new GraphQLNonNull(ExpenseQueryInputType) },
         },
-        resolve: (_, { input }) => {
-            return {}
-        },
+        resolve: getExpense,
     },
     getExpenses: {
         type: new GraphQLList(ExpenseType),
         description: 'Get all expenses for the user or from a specific account',
-        args: {
-            input: { type: new GraphQLNonNull(ExpenseQueryInputType) },
-        },
-        resolve: (_, { input } ) => {
-            return []
-        },
+        resolve: getExpenses,
     },
 }
 
@@ -52,9 +47,7 @@ module.exports.expenseMutations = {
         args: {
             input: { type: new GraphQLNonNull(ExpenseMutationInputType) },
         },
-        resolve: (_, { input }) => {
-            return {}
-        },
+        resolve: createExpense,
     },
     deleteExpense: {
         type: ExpenseType,
@@ -62,9 +55,7 @@ module.exports.expenseMutations = {
         args: {
             input: { type: new GraphQLNonNull(ExpenseMutationInputType) },
         },
-        resolve: (_, { input }) => {
-            return {}
-        },
+        resolve: deleteExpense,
     },
     updateExpense: {
         type: ExpenseType,
@@ -72,9 +63,7 @@ module.exports.expenseMutations = {
         args: {
             input: { type: new GraphQLNonNull(ExpenseMutationInputType) },
         },
-        resolve: (_, { input }) => {
-            return {}
-        },
+        resolve: updateExpense,
     },
 }
 
