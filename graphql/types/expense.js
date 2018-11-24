@@ -37,6 +37,7 @@ module.exports.ExpenseType = new GraphQLObjectType({
             date: { type: new GraphQLNonNull(GraphQLDate) },
             description: { type: GraphQLString },
             price: { type: new GraphQLNonNull(GraphQLFloat) },
+            type: { type: new GraphQLNonNull(GraphQLString) },
         }
     },
 })

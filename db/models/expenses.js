@@ -4,17 +4,18 @@ const Schema = mongoose.Schema
 const expenseSchema = new Schema(
     {
         id: String,
-        date: Date,
-        description: String,
-        category: {
-            type: String,
-            ref: 'Category',
-        },
-        price: Number,
         account: {
             type: String,
             ref: 'Account',
         },
+        category: {
+            type: String,
+            ref: 'Category',
+        },
+        date: Date,
+        description: String,
+        price: Number,
+        type: String,
     },
     { timestamps: true }
 )
