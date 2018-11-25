@@ -24,10 +24,15 @@ module.exports.ExpenseType = new GraphQLObjectType({
 
         return {
             id: { type: new GraphQLNonNull(GraphQLID) },
-            account: {
+            accountFrom: {
+                type: new GraphQLNonNull(AccountType),
+                description: 'The account this expense happens applies to',
+                resolve: (ownProps) => ownProps.accountFrom ? getAccount(ownProps.accountFrom) : null,
+            },
+            accountTo: {
                 type: AccountType,
-                description: 'The account this expense belongs to',
-                resolve: getAccount,
+                description: 'The account this expense transfer expense to',
+                resolve: (ownProps) => ownProps.accountTo ? getAccount(ownProps.accountTo) : null,
             },
             category: {
                 type: CategoryType,
@@ -50,11 +55,13 @@ module.exports.ExpenseMutationInputType = new GraphQLInputObjectType({
     description: 'Expense payload definition for mutations',
     fields: () => ({
         id: { type: GraphQLID },
-        account: { type: GraphQLID },
+        accountFrom: { type: GraphQLID },
+        accountTo: { type: GraphQLID },
         category: { type: GraphQLID },
         date: { type: GraphQLDate },
         description: { type: GraphQLString },
         price: { type: GraphQLFloat },
+        type: { type: GraphQLString },
     }),
 })
 
@@ -63,8 +70,10 @@ module.exports.ExpenseQueryInputType = new GraphQLInputObjectType({
     description: 'Expense payload definition for queries',
     fields: () => ({
         id: { type: GraphQLID },
-        account: { type: GraphQLID },
+        accountFrom: { type: GraphQLID },
+        accountTo: { type: GraphQLID },
         category: { type: GraphQLID },
         date: { type: GraphQLDate },
+        type: { type: GraphQLString },
     }),
 })

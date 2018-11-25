@@ -4,7 +4,11 @@ const Schema = mongoose.Schema
 const expenseSchema = new Schema(
     {
         id: String,
-        account: {
+        accountFrom: {
+            type: String,
+            ref: 'Account',
+        },
+        accountTo: {
             type: String,
             ref: 'Account',
         },

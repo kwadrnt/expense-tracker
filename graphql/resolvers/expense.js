@@ -9,4 +9,4 @@ module.exports.createExpense = (_, { input }) => Expenses.create({ ...input, id:
 module.exports.updateExpense = (_, { input }) => Expenses.findOneAndUpdate({ id: input.id }, input, { new: true })
 module.exports.deleteExpense = (_, { input }) => Expenses.findOneAndDelete({ id: input.id })
 
-module.exports.getAccount = (ownProps) => Accounts.findOne({ id: ownProps.account })
+module.exports.getAccount = (id) => Accounts.findOne({ id })
