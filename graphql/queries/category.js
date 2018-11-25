@@ -4,12 +4,10 @@ const { CategoryType, CategoryQueryInputType } = require('../types/category')
 
 const { getCategory, getCategories } = require('../resolvers/category')
 
-module.exports = {}
-
 // *******
 // QUERIES
 // *******
-module.exports.categoryQueries = {
+const categoryQueries = {
     getCategory: {
         type: CategoryType,
         description: 'Get a specific category',
@@ -23,4 +21,8 @@ module.exports.categoryQueries = {
         description: 'Get all categories',
         resolve: getCategories,
     },
+}
+
+module.exports = {
+    categoryQueries,
 }

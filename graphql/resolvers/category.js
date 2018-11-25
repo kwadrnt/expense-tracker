@@ -1,8 +1,11 @@
 const Categories = require('../../db/models/categories')
-const Expenses = require('../../db/models/expenses')
+const Transactions = require('../../db/models/transactions')
 
-module.exports = {}
+const getCategories = () => Categories.find()
 
-module.exports.getCategories = () => Categories.find()
+const getTransactions = (ownProps) => Transactions.find({ category: ownProps.id })
 
-module.exports.getExpenses = (ownProps) => Expenses.find({ category: ownProps.id })
+module.exports = {
+    getCategories,
+    getTransactions,
+}

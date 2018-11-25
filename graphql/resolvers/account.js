@@ -1,14 +1,55 @@
 const uuid = require('uuid/v4')
 
 const Accounts = require('../../db/models/accounts')
-const Expenses = require('../../db/models/expenses')
+const Transactions = require('../../db/models/transactions')
 
-module.exports = {}
+const getAccount = (_, { input }) => Accounts.findOne({ id: input.id })
+const getAccounts = () => Accounts.find()
+const createAccount = (_, { input }) => Accounts.create({ ...input, id: uuid() })
+const deleteAccount = (_, { input }) => Accounts.findOneAndDelete({ id: input.id })
+const updateAccount = (_, { input }) => Accounts.findOneAndUpdate({ id: input.id }, input, { new: true })
 
-module.exports.getAccount = (_, { input }) => Accounts.findOne({ id: input.id })
-module.exports.getAccounts = () => Accounts.find()
-module.exports.createAccount = (_, { input }) => Accounts.create({ ...input, id: uuid() })
-module.exports.deleteAccount = (_, { input }) => Accounts.findOneAndDelete({ id: input.id }),
-module.exports.updateAccount = (_, { input }) => Accounts.findOneAndUpdate({ id: input.id }, input, { new: true })
+const getTransactions = (ownProps) => {
+    return Transactions.find({ accountFrom: ownProps.id })
+        .then((transactions) => {
+            return Transactions.find({ accountTo: ownProps.id})
+                .then((transfers) => {
+                    return transactions.concat(transfers)
+                })
+        })
+}
 
-module.exports.getExpenses = (ownProps) => Expenses.find({ account: ownProps.id })
+const getBalance = (ownProps) => {
+    return getTransactions(ownProps)
+        .then((transactions) => {
+            let balance = 0
+
+            transactions.forEach((transaction) => {
+                switch(transaction.type) {
+                    case 'EXPENSE':
+                        balance = balance - transaction.price
+                        break
+                    case 'INCOME':
+                        balance = balance + transaction.price
+                        break
+                    case 'TRANSFER':
+                        balance = transaction.accountFrom === ownProps.id
+                            ? balance - transaction.price
+                            : balance + transaction.price
+                        break
+                }
+            })
+
+            return balance
+        })
+}
+
+module.exports = {
+    getAccount,
+    getAccounts,
+    createAccount,
+    deleteAccount,
+    updateAccount,
+    getTransactions,
+    getBalance,
+}

@@ -14,12 +14,10 @@ const {
     updateAccount,
 } = require('../resolvers/account')
 
-module.exports = {}
-
 // *******
 // QUERIES
 // *******
-module.exports.accountQueries = {
+const accountQueries = {
     getAccount: {
         type: AccountType,
         description: 'Get a specific account',
@@ -38,7 +36,7 @@ module.exports.accountQueries = {
 // *********
 // MUTATIONS
 // *********
-module.exports.accountMutations = {
+const accountMutations = {
     createAccount: {
         type: AccountType,
         description: 'Create a new account',
@@ -63,4 +61,9 @@ module.exports.accountMutations = {
         },
         resolve: updateAccount,
     },
+}
+
+module.exports = {
+    accountQueries,
+    accountMutations,
 }

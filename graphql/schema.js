@@ -2,14 +2,14 @@ const { GraphQLObjectType, GraphQLSchema } = require('graphql')
 
 const { accountMutations, accountQueries } = require('./queries/account')
 const { categoryQueries } = require('./queries/category')
-const { expenseMutations, expenseQueries } = require('./queries/expense')
+const { transactionMutations, transactionQueries } = require('./queries/transaction')
 
 module.exports = new GraphQLSchema({
     mutation: new GraphQLObjectType({
         name: 'Mutation',
         fields: {
             ...accountMutations,
-            ...expenseMutations,
+            ...transactionMutations,
         },
     }),
     query: new GraphQLObjectType({
@@ -17,7 +17,7 @@ module.exports = new GraphQLSchema({
         fields: {
             ...accountQueries,
             ...categoryQueries,
-            ...expenseQueries,
+            ...transactionQueries,
         },
     }),
 })

@@ -8,28 +8,29 @@ const {
     GraphQLString,
 } = require('graphql')
 
-const { getExpenses } = require('../resolvers/account')
-
-module.exports = {}
+const { getTransactions, getBalance } = require('../resolvers/account')
 
 // ****************
 // Constructor Type
 // ****************
-module.exports.AccountType = new GraphQLObjectType({
+const AccountType = new GraphQLObjectType({
     name: 'Account',
     description: 'This repsents an account',
     fields: () => {
-        const { ExpenseType } = require('./expense')
+        const { TransactionType } = require('./transaction')
 
         return {
             id: {type: new GraphQLNonNull(GraphQLID)},
             name: {type: new GraphQLNonNull(GraphQLString)},
-            // need to calculate balance per fetch
-            balance: {type: new GraphQLNonNull(GraphQLFloat)},
-            expenses: {
-                type: new GraphQLList(ExpenseType),
-                description: 'List of all Expenses',
-                resolve: getExpenses,
+            balance: {
+                type: new GraphQLNonNull(GraphQLFloat),
+                description: 'Current balance of the account',
+                resolve: getBalance,
+            },
+            transactions: {
+                type: new GraphQLList(TransactionType),
+                description: 'List of all transactions',
+                resolve: getTransactions,
             },
         }
     },
@@ -38,7 +39,7 @@ module.exports.AccountType = new GraphQLObjectType({
 // ***********
 // Input Types
 // ***********
-module.exports.AccountMutationInputType = new GraphQLInputObjectType({
+const AccountMutationInputType = new GraphQLInputObjectType({
     name: 'AccountMutationInputType',
     description: 'Account payload definition for mutations',
     fields: () => ({
@@ -48,7 +49,7 @@ module.exports.AccountMutationInputType = new GraphQLInputObjectType({
     }),
 })
 
-module.exports.AccountQueryInputType = new GraphQLInputObjectType({
+const AccountQueryInputType = new GraphQLInputObjectType({
     name: 'AccountQueryInputType',
     description: 'Account payload definition for queries',
     fields: () => ({
@@ -56,3 +57,8 @@ module.exports.AccountQueryInputType = new GraphQLInputObjectType({
     }),
 })
 
+module.exports = {
+    AccountType,
+    AccountMutationInputType,
+    AccountQueryInputType,
+}

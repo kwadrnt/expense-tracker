@@ -7,26 +7,24 @@ const {
     GraphQLString,
 } = require('graphql')
 
-const { getExpenses } = require('../resolvers/category')
-
-module.exports = {}
+const { getTransactions } = require('../resolvers/category')
 
 // ****************
 // Constructor Type
 // ****************
-module.exports.CategoryType = new GraphQLObjectType({
+const CategoryType = new GraphQLObjectType({
     name: 'Category',
     description: 'This represents a category',
     fields: () => {
-        const { ExpenseType } = require('./expense')
+        const { TransactionType } = require('./transaction')
 
         return {
             id: { type: new GraphQLNonNull(GraphQLID) },
             name: { type: new GraphQLNonNull(GraphQLString) },
-            expenses: {
-                type: new GraphQLList(ExpenseType),
-                description: 'List of all Expenses',
-                resolve: getExpenses,
+            transactions: {
+                type: new GraphQLList(TransactionType),
+                description: 'List of all transactions',
+                resolve: getTransactions,
             },
         }
     },
@@ -35,10 +33,15 @@ module.exports.CategoryType = new GraphQLObjectType({
 // ***********
 // Input Types
 // ***********
-module.exports.CategoryQueryInputType = new GraphQLInputObjectType({
+const CategoryQueryInputType = new GraphQLInputObjectType({
     name: 'CategoryQueryInputType',
     description: 'Category payload definition for queries',
     fields: () => ({
         id: { type: GraphQLID },
     }),
 })
+
+module.exports = {
+    CategoryType,
+    CategoryQueryInputType,
+}

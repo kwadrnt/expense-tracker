@@ -8,16 +8,14 @@ const {
 } = require('graphql')
 const { GraphQLDate } = require('graphql-iso-date')
 
-const { getAccount } = require('../resolvers/expense')
-
-module.exports = {}
+const { getAccount } = require('../resolvers/Transaction')
 
 // ****************
 // Constructor Type
 // ****************
-module.exports.ExpenseType = new GraphQLObjectType({
-    name: 'Expense',
-    description: 'This represents an expense',
+const TransactionType = new GraphQLObjectType({
+    name: 'Transaction',
+    description: 'This represents an transacton',
     fields: () => {
         const { AccountType } = require('./account')
         const { CategoryType } = require('./category')
@@ -26,17 +24,17 @@ module.exports.ExpenseType = new GraphQLObjectType({
             id: { type: new GraphQLNonNull(GraphQLID) },
             accountFrom: {
                 type: new GraphQLNonNull(AccountType),
-                description: 'The account this expense happens applies to',
+                description: 'The account this transacton happens applies to',
                 resolve: (ownProps) => ownProps.accountFrom ? getAccount(ownProps.accountFrom) : null,
             },
             accountTo: {
                 type: AccountType,
-                description: 'The account this expense transfer expense to',
+                description: 'The account this transacton transfer expense to',
                 resolve: (ownProps) => ownProps.accountTo ? getAccount(ownProps.accountTo) : null,
             },
             category: {
                 type: CategoryType,
-                description: 'The category this expense is under',
+                description: 'The category this transacton is under',
                 resolve: () => ({}),
             },
             date: { type: new GraphQLNonNull(GraphQLDate) },
@@ -50,9 +48,9 @@ module.exports.ExpenseType = new GraphQLObjectType({
 // ***********
 // Input Types
 // ***********
-module.exports.ExpenseMutationInputType = new GraphQLInputObjectType({
-    name: 'ExpenseMutationInputType',
-    description: 'Expense payload definition for mutations',
+const TransactionMutationInputType = new GraphQLInputObjectType({
+    name: 'TransactionMutationType',
+    description: 'Transaction payload definition for mutations',
     fields: () => ({
         id: { type: GraphQLID },
         accountFrom: { type: GraphQLID },
@@ -65,9 +63,9 @@ module.exports.ExpenseMutationInputType = new GraphQLInputObjectType({
     }),
 })
 
-module.exports.ExpenseQueryInputType = new GraphQLInputObjectType({
-    name: 'ExpenseQueryInputType',
-    description: 'Expense payload definition for queries',
+const TransactionQueryInputType = new GraphQLInputObjectType({
+    name: 'TransactionQueryInputType',
+    description: 'Transaction payload definition for queries',
     fields: () => ({
         id: { type: GraphQLID },
         accountFrom: { type: GraphQLID },
@@ -77,3 +75,9 @@ module.exports.ExpenseQueryInputType = new GraphQLInputObjectType({
         type: { type: GraphQLString },
     }),
 })
+
+module.exports = {
+    TransactionType,
+    TransactionMutationInputType,
+    TransactionQueryInputType,
+}
