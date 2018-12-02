@@ -1,10 +1,24 @@
 {
     parser: 'babel-eslint',
+    plugins: [
+        'react',
+    ],
     parserOptions: {
         ecmaVersion: 2017,
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true },
     },
     env: {
         es6: true,
+        browser: true,
+    },
+    extends: [
+        'plugin:react/recommended',
+    ],
+    settings: {
+        react: {
+            version: '16.6.3',
+        },
     },
     rules: {
         'array-bracket-spacing': [ 'warn', 'always' ],
@@ -16,6 +30,7 @@
         'function-paren-newline': [ 'error', 'multiline' ],
         'implicit-arrow-linebreak': [ 'error', 'beside' ],
         'key-spacing': [ 'error', { 'beforeColon': false, 'afterColon': true, 'mode': 'strict' } ],
+        'no-console': 'warn',
         'no-mixed-spaces-and-tabs': 'error',
         'no-multi-spaces': 'warn',
         'no-multiple-empty-lines': [ 'error', { 'max': 1 } ],
