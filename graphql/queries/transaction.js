@@ -1,18 +1,18 @@
 const { GraphQLList, GraphQLNonNull } = require('graphql')
 
 const {
-    TransactionMutationInputType,
-    TransactionQueryInputType,
-    TransactionType,
-} = require('../types/transaction')
-
-const {
     getTransaction,
     getTransactions,
     createTransaction,
     updateTransaction,
     deleteTransaction,
 } = require('../resolvers/transaction')
+
+const {
+    TransactionMutationInputType,
+    TransactionQueryInputType,
+    TransactionType,
+} = require('../types/transaction')
 
 // *******
 // QUERIES

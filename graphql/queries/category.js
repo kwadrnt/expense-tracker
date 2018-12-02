@@ -1,8 +1,7 @@
 const { GraphQLList, GraphQLNonNull } = require('graphql')
 
-const { CategoryType, CategoryQueryInputType } = require('../types/category')
-
 const { getCategory, getCategories } = require('../resolvers/category')
+const { CategoryType, CategoryQueryInputType } = require('../types/category')
 
 // *******
 // QUERIES

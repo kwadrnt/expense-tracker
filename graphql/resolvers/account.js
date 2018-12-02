@@ -3,21 +3,10 @@ const uuid = require('uuid/v4')
 const Accounts = require('../../db/models/accounts')
 const Transactions = require('../../db/models/transactions')
 
-const getAccount = (_, { input }) => Accounts.findOne({ id: input.id })
-const getAccounts = () => Accounts.find()
 const createAccount = (_, { input }) => Accounts.create({ ...input, id: uuid() })
 const deleteAccount = (_, { input }) => Accounts.findOneAndDelete({ id: input.id })
-const updateAccount = (_, { input }) => Accounts.findOneAndUpdate({ id: input.id }, input, { new: true })
-
-const getTransactions = (ownProps) => {
-    return Transactions.find({ accountFrom: ownProps.id })
-        .then((transactions) => {
-            return Transactions.find({ accountTo: ownProps.id})
-                .then((transfers) => {
-                    return transactions.concat(transfers)
-                })
-        })
-}
+const getAccount = (_, { input }) => Accounts.findOne({ id: input.id })
+const getAccounts = () => Accounts.find()
 
 const getBalance = (ownProps) => {
     return getTransactions(ownProps)
@@ -44,12 +33,24 @@ const getBalance = (ownProps) => {
         })
 }
 
+const getTransactions = (ownProps) => {
+    return Transactions.find({ accountFrom: ownProps.id })
+        .then((transactions) => {
+            return Transactions.find({ accountTo: ownProps.id})
+                .then((transfers) => {
+                    return transactions.concat(transfers)
+                })
+        })
+}
+
+const updateAccount = (_, { input }) => Accounts.findOneAndUpdate({ id: input.id }, input, { new: true })
+
 module.exports = {
-    getAccount,
-    getAccounts,
     createAccount,
     deleteAccount,
-    updateAccount,
-    getTransactions,
+    getAccount,
+    getAccounts,
     getBalance,
+    getTransactions,
+    updateAccount,
 }

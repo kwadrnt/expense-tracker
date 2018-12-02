@@ -1,18 +1,19 @@
 const { GraphQLList, GraphQLNonNull } = require('graphql')
 
 const {
-    AccountMutationInputType,
-    AccountQueryInputType,
-    AccountType,
-} = require('../types/account')
-
-const {
     getAccount,
     getAccounts,
     createAccount,
     deleteAccount,
     updateAccount,
 } = require('../resolvers/account')
+
+const {
+    AccountMutationInputType,
+    AccountQueryInputType,
+    AccountType,
+} = require('../types/account')
+
 
 // *******
 // QUERIES
