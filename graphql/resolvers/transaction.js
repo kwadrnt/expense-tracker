@@ -10,7 +10,6 @@ const getTransaction = (_, { input }) => Transactions.findOne({ id: input.id })
 const getTransactions = () => Transactions.find()
 const updateTransaction = (_, { input }) => Transactions.findOneAndUpdate({ id: input.id }, input, { new: true })
 
-
 module.exports = {
     createTransaction,
     deleteTransaction,

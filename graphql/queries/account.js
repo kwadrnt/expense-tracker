@@ -14,7 +14,6 @@ const {
     AccountType,
 } = require('../types/account')
 
-
 // *******
 // QUERIES
 // *******
