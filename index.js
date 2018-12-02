@@ -16,5 +16,5 @@ server.use('/graphql', graphqlHTTP({
 }))
 
 server.listen(PORT, () => {
-    console.log(`Magic happens on http://localhost:${PORT}`)
+    console.log(`Magic happens on http://localhost:${PORT}`) // eslint-disable-line no-console
 })
