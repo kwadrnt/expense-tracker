@@ -17,6 +17,7 @@
     "author": "alfred",
     "license": "ISC",
     "dependencies": {
+        "classnames": "^2.2.6",
         "express": "^4.16.4",
         "express-graphql": "^0.7.1",
         "graphql": "^14.0.2",
