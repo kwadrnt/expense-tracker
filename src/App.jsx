@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './app.scss'
+import styles from './app.module.scss'
 
 const App = () => {
-    return <div className="test">Hello World!</div>
+    return <div className={styles.test}>Hello World!</div>
 }
 
 export default App
