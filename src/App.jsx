@@ -1,14 +1,16 @@
 import React from 'react'
-import cx from 'classnames'
+import { BrowserRouter } from 'react-router-dom'
 
-import Container from 'common/Container'
-
-import styles from './app.module.scss'
+import accounts from 'routes/accounts'
+import expenses from 'routes/expenses'
 
 const App = () => (
-    <Container>
-        <div className={cx(styles.test, 'pa4')}>Hello World!</div>
-    </Container>
+    <BrowserRouter>
+        <React.Fragment>
+            {accounts}
+            {expenses}
+        </React.Fragment>
+    </BrowserRouter>
 )
 
 export default App

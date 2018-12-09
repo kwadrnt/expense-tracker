@@ -4,6 +4,7 @@ const path = require('path')
 const htmlPlugin = new HtmlWebPackPlugin({
     filename: './index.html',
     template: './src/index.html',
+    publicPath: '/',
 })
 
 module.exports = {
@@ -28,10 +29,15 @@ module.exports = {
         ],
     },
     plugins: [ htmlPlugin ],
+    devServer: {
+        historyApiFallback: true,
+    },
     resolve: {
         alias: {
             common: path.resolve('src/components/common'),
             components: path.resolve('src/components'),
+            constants: path.resolve('src/constants'),
+            routes: path.resolve('src/routes'),
         },
         extensions: [ '.js', '.jsx' ],
     },
