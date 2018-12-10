@@ -1,18 +1,22 @@
 import React from 'react'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { ApolloProvider } from 'react-apollo'
 
 import routes from 'routes'
 
-const App = () => (
-    <BrowserRouter>
-        <Switch>
-            {routes.map((route, idx) => (
-                <Route key={idx} exact {...route} />
-            ))}
+import { getApolloClient } from 'utils/apollo'
 
-            <Redirect from={'*'} to={'/'} />
-        </Switch>
-    </BrowserRouter>
+const App = () => (
+    <ApolloProvider client={getApolloClient()}>
+        <BrowserRouter>
+            <Switch>
+                {routes.map((route, idx) => (
+                    <Route key={idx} exact {...route} />
+                ))}
+                <Redirect from={'*'} to={'/'} />
+            </Switch>
+        </BrowserRouter>
+    </ApolloProvider>
 )
 
 export default App

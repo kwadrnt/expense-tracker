@@ -1,6 +1,6 @@
 import { BASE_PATH, ACCOUNTS_PATH } from 'constants/urls'
 
-import AccountsPage from 'components/AccountsPage'
+import AccountsPageContainer from 'containers/AccountsPage'
 import TestPage from 'components/TestPage'
 
 const accounts = [
@@ -10,7 +10,7 @@ const accounts = [
     },
     {
         path: ACCOUNTS_PATH,
-        component: AccountsPage,
+        component: AccountsPageContainer,
     },
 ]
 

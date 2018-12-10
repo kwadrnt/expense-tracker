@@ -2,9 +2,11 @@ import React from 'react'
 
 import Container from 'common/Container'
 
-const AccountsPage = () => (
+const AccountsPage = ({ accounts }) => (
     <Container>
-        <div className={'pa4'}>AccountsPage</div>
+        {accounts && accounts.map((account) => (
+            <div key={account.id}>{account.name}</div>
+        ))}
     </Container>
 )
 
