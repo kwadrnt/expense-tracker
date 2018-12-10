@@ -1,6 +1,6 @@
 import ApolloClient from 'apollo-client'
-import { createHttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import { createHttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 let client
 
@@ -11,7 +11,7 @@ export function getApolloClient() {
             cache: new InMemoryCache(),
             connectToDevTools: true,
             queryDeduplication: true,
-        }) 
+        })
     }
 
     return client
