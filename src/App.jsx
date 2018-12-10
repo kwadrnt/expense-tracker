@@ -1,15 +1,17 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
-import accounts from 'routes/accounts'
-import expenses from 'routes/expenses'
+import routes from 'routes'
 
 const App = () => (
     <BrowserRouter>
-        <React.Fragment>
-            {accounts}
-            {expenses}
-        </React.Fragment>
+        <Switch>
+            {routes.map((route, idx) => (
+                <Route key={idx} exact {...route} />
+            ))}
+
+            <Redirect from={'*'} to={'/'} />
+        </Switch>
     </BrowserRouter>
 )
 
