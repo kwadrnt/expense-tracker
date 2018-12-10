@@ -26,7 +26,7 @@ export const withAccountsQuery = () => graphql(getAccounts, {
     alias: 'getAccounts',
     props: ({ data }) => {
         return {
-            accounts: get(data, 'getAccounts')
+            accounts: get(data, 'getAccounts'),
         }
     },
 })
