@@ -4,7 +4,6 @@ const path = require('path')
 const htmlPlugin = new HtmlWebPackPlugin({
     filename: './index.html',
     template: './src/index.html',
-    publicPath: '/',
 })
 
 module.exports = {
