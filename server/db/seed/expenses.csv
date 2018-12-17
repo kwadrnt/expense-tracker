@@ -1,0 +1,284 @@
+date,description,category,accountFrom,price
+1/1/18,Frying Pan,Miscellaneous,Spending,$ 34.34
+1/1/18,Starbucks,Eating Out,Spending,$ 25.00
+1/2/18,Lodging- AirBnB Tokyo,Travelling,Travel,$ 289.46
+1/2/18,Lodging- AirBnB Sapporo,Travelling,Travel,$ 131.66
+1/2/18,Little Lucca,Eating Out,Spending,$ 63.67
+1/2/18,T4,Eating Out,Spending,$ 4.00
+1/3/18,Lodging - AirBnB Sapporo,Travelling,Spending,$ 191.11
+1/3/18,Health Insurance - Kaiser,Insurance,Spending,$ 20.89
+1/4/18,CVS,Eating Out,Spending,$ 2.43
+1/6/18,Lego - Brickheadz,Hobbies,Spending,$ 43.36
+1/7/18,Costco,Eating Out,Spending,$ 5.89
+1/8/18,Tonkatsu Kiyoshi,Eating Out,Spending,$ 90.50
+1/8/18,Brew Tea Bar,Eating Out,Spending,$ 4.87
+1/8/18,Wicken Spoon,Eating Out,Spending,$ 30.31
+1/8/18,Shell,Car,Spending,$ 42.44
+1/8/18,Drinks,Eating Out,Spending,$ 3.22
+1/11/18,Dunkin Donuts,Eating Out,Spending,$ 3.34
+1/11/18,Shake Shack,Eating Out,Spending,$ 18.59
+1/12/18,Cake Tray,Miscellaneous,Spending,$ 15.18
+1/12/18,Momofuku,Eating Out,Spending,$ 35.00
+1/13/18,Costco,Eating Out,Spending,$ 6.96
+1/13/18,Costco,Eating Out,Spending,$ 1.56
+1/13/18,Car Rental - Costco,Travelling,Spending,$ 134.10
+1/14/18,Protein Powder,Fitness,Spending,$ 67.63
+1/15/18,Shell,Car,Spending,$ 35.30
+1/15/18,Shell,Car,Spending,$ 35.66
+1/20/18,Oriental BBQ,Eating Out,Spending,$ 81.00
+1/22/18,Netflix,Entertainment,Spending,$ 10.99
+1/22/18,Costco,Eating Out,Spending,$ 4.91
+1/23/18,Poki Time,Eating Out,Spending,$ 14.08
+1/25/18,Chipotle,Eating Out,Spending,$ 8.95
+1/26/18,Clipper Card,Transportation,Spending,$ 22.00
+1/27/18,Lucky's,Miscellaneous,Spending,$ 8.44
+1/27/18,Tani's Kitchen,Eating Out,Spending,$ 38.23
+1/29/18,Starbucks,Eating Out,Spending,$ 2.75
+1/31/18,Starbucks,Eating Out,Spending,$ 2.65
+2/1/18,Health Insurance - Kaiser,Insurance,Spending,$ 57.29
+2/1/18,Airplane Ticket - Sapporo,Travelling,Travel,$ 104.95
+2/2/18,Starbucks,Eating Out,Spending,$ 1.95
+2/3/18,Carbon Grill,Eating Out,Spending,$ 341.38
+2/5/18,Target,Miscellaneous,Spending,$ 12.52
+2/5/18,Shell,Car,Spending,$ 36.18
+2/5/18,Starbucks,Eating Out,Spending,$ 5.15
+2/6/18,Starbucks,Eating Out,Spending,$ 25.00
+2/7/18,Lucky's,Eating Out,Spending,$ 4.45
+2/8/18,Chipotle,Eating Out,Spending,$ 9.00
+2/9/18,100% Sweet,Eating Out,Spending,$ 6.00
+2/12/18,Lucky's,Eating Out,Spending,$ 6.99
+2/12/18,State Tax,Miscellaneous,Spending,$ 430.00
+2/12/18,Federal Tax,Miscellaneous,Spending,$ 1965.00
+2/15/18,Dick's Sporting Good,Clothes,Spending,$ 65.09
+2/16/18,Hinodeya,Eating Out,Spending,$ 68.00
+2/19/18,Tani's Kitchen,Eating Out,Spending,$ 29.00
+2/18/18,Lucky's,Eating Out,Spending,$ 2.22
+2/21/18,Netflix,Entertainment,Spending,$ 10.99
+2/22/18,Perilla,Eating Out,Spending,$ 33.15
+2/22/18,Easy-Breezy,Eating Out,Spending,$ 3.52
+2/24/18,Yummy Yummy,Eating Out,Spending,$ 90.15
+2/24/18,Shell,Car,Spending,$ 25.11
+2/26/18,Grindz,Eating Out,Spending,$ 45.00
+2/28/18,CVS,Eating Out,Spending,$ 2.21
+3/1/18,USPS,Miscellaneous,Spending,$ 20.00
+3/1/18,Dental Insurance - Dental Health,Insurance,Spending,$ 11.50
+3/1/18,Health Insurance - Kaiser,Insurance,Spending,$ 57.29
+3/2/18,Car Insurance - Farmers,Insurance,Spending,$ 709.58
+3/14/18,Moisturizer,Miscellaneous,Spending,$ 19.87
+3/16/18,In n Out,Eating Out,Spending,$ 6.96
+3/18/18,DC T-shirts,Clothes,Spending,$ 39.96
+3/20/18,Copy Paper,Miscellaneous,Spending,$ 26.03
+3/21/18,Lucky's,Eating Out,Spending,$ 4.34
+3/21/18,Netflix,Entertainment,Spending,$ 10.99
+3/21/18,USPS,Miscellaneous,Spending,$ 11.75
+3/21/18,My Cup Of Tea,Eating Out,Spending,$ 4.88
+3/22/18,Lucky's,Eating Out,Spending,$ 3.98
+3/23/18,Lucky's,Eating Out,Spending,$ 13.83
+3/24/18,USPS,Miscellaneous,Spending,$ 24.75
+3/26/18,Shell,Car,Spending,$ 39.10
+3/26/18,Lucky's,Eating Out,Spending,$ 2.77
+3/28/18,Chibog,Eating Out,Spending,$ 32.41
+3/28/18,Chipotle,Eating Out,Spending,$ 8.95
+3/29/18,Dental Insurance - Dental Health,Insurance,Spending,$ 23.00
+3/30/18,Legos - Brickheadz,Hobbies,Spending,$ 39.02
+3/30/18,Mimi's Joint,Eating Out,Spending,$ 7.00
+3/31/18,Bountiful Foods,Eating Out,Spending,$ 5.00
+3/31/18,Moki Sushi,Eating Out,Spending,$ 34.75
+3/31/18,Tacos,Eating Out,Spending,$ 5.50
+4/1/18,Vending Machine,Eating Out,Spending,$ 1.75
+4/2/18,Vietnamese Sandwiches,Eating Out,Spending,$ 18.00
+4/2/18,Cotton On,Clothes,Spending,$ 48.82
+4/2/18,Levis,Clothes,Spending,$ 86.72
+4/2/18,Super Duper,Eating Out,Spending,$ 8.95
+4/3/18,Massage,Lifestyle,Spending,$ 31.00
+4/3/18,Health Insurance - Kaiser,Insurance,Spending,$ 57.29
+4/3/18,Samsung Galaxy S9,Shopping,Spending,$ 722.60
+4/4/18,Shampoo,Lifestyle,Spending,$ 37.01
+4/5/18,Clipper Card,Transportation,Spending,$ 75.00
+4/6/18,Maintenance Fee,Miscellaneous,Savings,$ 5.00
+4/6/18,Phone Protector,Miscellaneous,Spending,$ 20.98
+4/7/18,SIM card,Miscellaneous,Spending,$ 5.43
+4/8/18,Sweet Honey Dessert,Eating Out,Spending,$ 16.00
+4/9/18,Chipotle,Eating Out,Spending,$ 9.39
+4/10/18,Shell,Car,Spending,$ 36.83
+4/12/18,Deodorant,Miscellaneous,Spending,$ 15.83
+4/12/18,Split Bread,Eating Out,Spending,$ 12.36
+4/13/18,Ono Hawaiin,Eating Out,Spending,$ 23.63
+4/14/18,Birthday Gift,Miscellaneous,Spending,$ 100.00
+4/14/18,Electric Toothbrush,Lifestyle,Spending,$ 97.64
+4/15/18,Kogi Gogi,Eating Out,Spending,$ 241.54
+4/16/18,Ross,Clothes,Spending,$ 14.13
+4/17/18,Fernando - Box Lunch,Miscellaneous,Spending,$ 3.72
+4/18/18,Muragame Udon,Eating Out,Spending,$ 18.01
+4/19/18,Chipotle,Eating Out,Spending,$ 8.95
+4/19/18,Luckys,Eating Out,Spending,$ 3.50
+4/21/18,Netflix,Entertainment,Spending,$ 10.99
+4/21/18,Namecheap,Miscellaneous,Spending,$ 2.88
+4/22/18,Meet Fresh,Eating Out,Spending,$ 4.50
+4/23/18,Namecheap,Miscellaneous,Spending,$ 11.16
+4/23/18,Target,Miscellaneous,Spending,$ 4.35
+4/23/18,One Piece Sushi,Eating Out,Spending,$ 49.00
+4/24/18,GCD Raffle,Miscellaneous,Spending,$ 60.00
+4/27/18,Jack In The Box,Eating Out,Spending,$ 6.53
+4/28/18,Little Lucca's,Eating Out,Spending,$ 11.85
+4/29/18,Jack In The Box,Eating Out,Spending,$ 13.08
+4/30/18,Trader Joe's,Eating Out,Spending,$ 1.02
+5/4/18,Lyft,Transportation,Spending,$ 5.00
+5/7/18,Luckys,Eating Out,Spending,$ 21.37
+5/10/18,Humble Bundle - Python Dev,Education,Spending,$ 20.00
+5/11/18,Garden Club,Eating Out,Spending,$ 154.15
+5/13/18,Konjoe Burger,Eating Out,Spending,$ 13.62
+5/13/18,Easy Breezy,Eating Out,Spending,$ 3.68
+5/13/18,Kogi Gogi,Eating Out,Spending,$ 32.43
+5/14/18,Shell,Car,Spending,$ 36.10
+5/14/18,Luckys,Eating Out,Spending,$ 2.21
+5/16/18,Event - KublaCon,Entertainment,Spending,$ 85.39
+5/20/18,Fire Up Hotpot,Eating Out,Spending,$ 245.05
+5/20/18,Starbucks,Eating Out,Spending,$ 5.45
+5/21/18,Netflix,Entertainment,Spending,$ 10.99
+5/22/18,Luckys,Eating Out,Spending,$ 8.17
+5/26/18,Jack in the Box,Eating Out,Spending,$ 6.53
+5/26/18,In N Out,Eating Out,Spending,$ 7.23
+5/26/18,Dalat,Eating Out,Spending,$ 24.00
+5/27/18,I Love Sushi and Tofu,Eating Out,Spending,$ 15.25
+5/28/18,Jack in the Box,Eating Out,Spending,$ 6.53
+5/28/18,Se Come Asi Taqueria,Eating Out,Spending,$ 11.95
+5/28/18,Shell,Car,Spending,$ 38.29
+5/30/18,Boba,Eating Out,Spending,$ 4.25
+6/1/18,Luckys,Eating Out,Spending,$ 2.50
+6/7/18,Pocketcast,Miscellaneous,Spending,$ 9.00
+6/7/18,Pocketcast,Miscellaneous,Spending,$ 0.27
+6/9/18,Spam Musubi,Eating Out,Spending,$ 4.00
+6/11/18,Luckys,Eating Out,Spending,$ 3.24
+6/13/18,Bonchon,Eating Out,Spending,$ 37.19
+6/14/18,Business Cards,Miscellaneous,Spending,$ 38.61
+6/15/18,Round Tables,Eating Out,Spending,$ 10.32
+6/18/18,Shell,Car,Spending,$ 41.04
+6/18/18,Clipper Card,Transportation,Spending,$ 20.00
+6/19/18,Muragame Udon,Eating Out,Spending,$ 16.38
+6/21/18,Netflix,Entertainment,Spending,$ 10.99
+6/23/18,Kowloon Tong,Eating Out,Spending,$ 8.66
+6/25/18,Safeway,Eating Out,Spending,$ 3.50
+6/25/18,Starbucks,Eating Out,Spending,$ 5.45
+7/2/18,76,Car,Spending,$ 39.48
+7/2/18,Century 20,Eating Out,Spending,$ 13.65
+7/4/18,Old Town,Eating Out,Spending,$ 112.60
+7/4/18,Uji Time,Eating Out,Spending,$ 6.50
+7/6/18,Cash,Miscellaneous,Spending,$ 10.00
+7/7/18,San Bruno Taqueria,Eating Out,Spending,$ 40.00
+7/7/18,Legos - Brickheadz,Hobbies,Spending,$ 151.79
+7/7/18,100 Percent Sweet,Eating Out,Spending,$ 28.00
+7/7/18,Taqueria Guadalajara,Eating Out,Spending,$ 14.11
+7/8/18,Happy Lemon,Eating Out,Spending,$ 3.95
+7/9/18,LoZ: Breath of the Wild,Entertainment,Spending,$ 65.54
+7/11/18,Blue Line Pizza,Eating Out,Spending,$ 16.25
+7/11/18,Sweet Honey Dessert,Eating Out,Spending,$ 48.59
+7/11/18,Nintendo Switch,Entertainment,Spending,$ 250.49
+7/14/18,Windshield Wipers,Miscellaneous,Spending,$ 12.99
+7/15/18,Table Clock,Miscellaneous,Spending,$ 21.99
+7/16/18,Sound Bar,Miscellaneous,Spending,$ 21.69
+7/17/18,Sou Vide,Miscellaneous,Spending,$ 75.94
+7/18/18,Ben - Time Story,Miscellaneous,Spending,$ 12.99
+7/19/18,Shell,Car,Spending,$ 31.23
+7/21/18,Netflix,Entertainment,Spending,$ 10.99
+7/23/18,Split Bread,Eating Out,Spending,$ 12.41
+7/24/18,DC Universe - Annual Subscription,Entertainment,Spending,$ 74.99
+7/27/18,Starbucks,Eating Out,Spending,$ 3.45
+7/28/18,Gen KBBQ,Eating Out,Spending,$ 339.61
+7/29/18,Happy Lemon,Eating Out,Spending,$ 5.00
+8/2/18,In n Out,Eating Out,Spending,$ 7.23
+8/5/18,NES Classic,Entertainment,Spending,$ 65.24
+8/5/18,Memory Foam Pillow,Miscellaneous,Spending,$ 21.46
+8/9/18,Amazon - Headphones,Shopping,Spending,$ 30.37
+8/18/18,Matthew - Food,Eating Out,Spending,$ 35.42
+8/16/18,Parking - Street,Car,Spending,$ 1.38
+8/16/18,Nike,Miscellaneous,Spending,$ 162.76
+8/16/18,76,Car,Spending,$ 38.41
+8/19/18,Burger King,Eating Out,Spending,$ 9.77
+8/21/18,Netflix,Entertainment,Spending,$ 10.99
+8/23/18,In n Out,Eating Out,Spending,$ 7.23
+8/24/18,Asha Tea House,Eating Out,Spending,$ 4.25
+8/25/18,Happy Lemon,Eating Out,Spending,$ 5.00
+8/26/18,Old Town Sushi,Eating Out,Spending,$ 65.10
+8/26/18,Starbucks,Eating Out,Spending,$ 3.95
+8/27/18,Uva Enoteca,Eating Out,Spending,$ 62.00
+8/28/18,Lucky's,Eating Out,Spending,$ 2.54
+8/28/18,Starbucks,Eating Out,Spending,$ 4.75
+8/28/18,Ono,Eating Out,Spending,$ 17.66
+8/31/18,Lyft,Transportation,Spending,$ 2.00
+8/31/18,Amami-san,Eating Out,Spending,$ 124.00
+9/3/18,No 1 SF BBQ,Eating Out,Spending,$ 91.23
+9/7/18,K Element,Eating Out,Spending,$ 42.25
+9/10/18,Lucky's,Eating Out,Spending,$ 4.53
+9/10/18,Jake's Hawaiin,Eating Out,Spending,$ 20.86
+9/15/18,Noah's Bagels,Miscellaneous,Spending,$ 31.00
+9/15/18,We Sushi,Eating Out,Spending,$ 12.59
+9/16/18,76,Car,Spending,$ 40.24
+9/16/18,Parking - Dragon Boat,Car,Spending,$ 9.00
+9/17/18,Parking - Dragon Boat,Car,Spending,$ 5.00
+9/17/18,Gogi Time,Eating Out,Spending,$ 328.93
+9/18/18,Lucky's,Eating Out,Spending,$ 2.24
+9/19/18,Headphone Stand,Miscellaneous,Spending,$ 9.56
+9/19/18,Fastrak,Car,Spending,$ 25.00
+9/21/18,Netflix,Entertainment,Spending,$ 10.99
+9/22/18,BBQ,Miscellaneous,Spending,$ 70.00
+9/23/18,Indian Paradox,Eating Out,Spending,$ 67.85
+9/23/18,Super Pan,Eating Out,Spending,$ 3.25
+9/25/18,BBQ Material,Miscellaneous,Spending,$ 25.50
+9/26/18,Muragame Udon,Eating Out,Spending,$ 16.17
+9/27/18,Uniqlo,Clothes,Spending,$ 16.17
+9/29/18,Humble Bundle Annual,Entertainment,Spending,$ 132.00
+10/5/18,Little Lucca's,Eating Out,Spending,$ 27.46
+10/5/18,Happy Lemon,Eating Out,Spending,$ 4.50
+10/7/18,Dynasty Chinese Cuisine,Eating Out,Spending,$ 161.86
+10/8/18,Parking - Meter,Car,Spending,$ 0.50
+10/9/18,Vietnamese Sandwich,Eating Out,Spending,$ 25.50
+10/10/18,Afaghana Kebab,Eating Out,Spending,$ 23.00
+10/13/18,Fire Up Hot Pot & Meet Fresh,Eating Out,Spending,$ 37.00
+10/13/18,Riverside,Eating Out,Spending,$ 18.15
+10/14/18,Happy Lemon,Eating Out,Spending,$ 10.00
+10/14/18,Kogi Gogi,Eating Out,Spending,$ 37.00
+10/16/18,Chocolate,Miscellaneous,Spending,$ 82.00
+10/17/18,In n Out,Eating Out,Spending,$ 7.23
+10/17/18,Muragame,Eating Out,Spending,$ 13.67
+10/18/18,Shell,Car,Spending,$ 42.01
+10/20/18,Lucky's,Eating Out,Spending,$ 2.44
+10/21/18,Food truck,Eating Out,Spending,$ 11.38
+10/21/18,Monster Hunter Switch,Entertainment,Spending,$ 43.27
+10/22/18,Parking - Presidio,Car,Spending,$ 4.50
+10/22/18,Super Cue,Eating Out,Spending,$ 4.49
+10/22/18,Lucky's,Eating Out,Spending,$ 1.99
+10/23/18,Wendy's,Eating Out,Spending,$ 6.53
+10/25/18,Clipper Card,Transportation,Spending,$ 5.50
+10/26/18,Adidas,Clothes,Spending,$ 103.08
+11/2/18,Legos - Brickheadz - Voltron,Hobbies,Spending,$ 325.39
+11/2/18,Fogo de Chao,Eating Out,Spending,$ 194.62
+11/3/18,Old Town Ramen,Eating Out,Spending,$ 38.00
+11/4/18,Happy Lemon,Eating Out,Spending,$ 4.50
+11/4/18,Starbucks,Eating Out,Spending,$ 5.45
+11/9/18,Protein Powder,Fitness,Spending,$ 72.20
+11/9/18,Wendy's Frosty Tag,Miscellaneous,Spending,$ 5.00
+11/10/18,Boba Guys,Eating Out,Spending,$ 5.78
+11/10/18,Skool,Eating Out,Spending,$ 467.04
+11/11/18,Starbucks,Eating Out,Spending,$ 5.45
+11/18/18,Wendy's,Eating Out,Spending,$ 5.44
+11/19/18,Starbucks,Eating Out,Spending,$ 5.45
+11/19/18,Legos - Brickheadz,Hobbies,Spending,$ 113.85
+11/24/18,Kowloon Tong,Eating Out,Spending,$ 42.84
+11/24/18,Starbucks,Eating Out,Spending,$ 5.45
+11/26/18,Wendy's,Eating Out,Spending,$ 6.53
+11/26/18,Shell,Car,Spending,$ 36.22
+12/2/18,Muragame,Eating Out,Spending,$ 12.04
+12/2/18,Starbucks,Eating Out,Spending,$ 5.25
+12/2/18,Christmas Sweater,Miscellaneous,Spending,$ 28.20
+12/3/18,Headphones,Electronics,Spending,$ 37.96
+12/4/18,Clipper Card,Transportation,Spending,$ 5.50
+12/7/18,Parking - Exploratorium,Car,Spending,$ 8.00
+12/8/18,Lucky's,Eating Out,Spending,$ 3.87
+12/8/18,Muragame,Eating Out,Spending,$ 23.87
+12/9/18,Starbucks,Eating Out,Spending,$ 5.25
+12/9/18,Tani's,Eating Out,Spending,$ 19.00
+12/10/18,Clipper Card,Transportation,Spending,$ 10.00
+12/10/18,Target - Ice cream,Eat Out,Spending,$ 7.50
+12/11/18,In n Out,Eating Out,Spending,$ 7.23
+12/15/18,Fire Up,Eating Out,Spending,$ 42.00

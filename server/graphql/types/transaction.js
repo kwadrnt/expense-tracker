@@ -8,7 +8,7 @@ const {
 } = require('graphql')
 const { GraphQLDate } = require('graphql-iso-date')
 
-const { getAccount } = require('../resolvers/Transaction')
+const { getAccount, getCategory, getTransactionType } = require('../resolvers/Transaction')
 
 // ****************
 // Constructor Type
@@ -19,28 +19,33 @@ const TransactionType = new GraphQLObjectType({
     fields: () => {
         const { AccountType } = require('./account')
         const { CategoryType } = require('./category')
+        const { TransactionTypeType } = require('./transactionType')
 
         return {
             id: { type: new GraphQLNonNull(GraphQLID) },
             accountFrom: {
                 type: new GraphQLNonNull(AccountType),
                 description: 'The account this transacton happens applies to',
-                resolve: (ownProps) => ownProps.accountFrom ? getAccount(ownProps.accountFrom) : null,
+                resolve: (ownProps) => getAccount(ownProps, 'accountFrom'),
             },
             accountTo: {
                 type: AccountType,
                 description: 'The account this transacton transfer expense to',
-                resolve: (ownProps) => ownProps.accountTo ? getAccount(ownProps.accountTo) : null,
+                resolve: (ownProps) => getAccount(ownProps, 'accountTo'),
             },
             category: {
                 type: CategoryType,
                 description: 'The category this transacton is under',
-                resolve: () => ({}),
+                resolve: getCategory,
             },
             date: { type: new GraphQLNonNull(GraphQLDate) },
             description: { type: GraphQLString },
             price: { type: new GraphQLNonNull(GraphQLFloat) },
-            type: { type: new GraphQLNonNull(GraphQLString) },
+            type: {
+                type: TransactionTypeType,
+                description: 'Transaction type',
+                resolve: getTransactionType,
+            },
         }
     },
 })

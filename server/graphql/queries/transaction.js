@@ -1,11 +1,11 @@
 const { GraphQLList, GraphQLNonNull } = require('graphql')
 
 const {
+    createTransaction,
+    deleteTransaction,
     getTransaction,
     getTransactions,
-    createTransaction,
     updateTransaction,
-    deleteTransaction,
 } = require('../resolvers/transaction')
 
 const {

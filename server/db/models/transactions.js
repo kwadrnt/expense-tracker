@@ -19,7 +19,10 @@ const transactionSchema = new Schema(
         date: Date,
         description: String,
         price: Number,
-        type: String,
+        type: {
+            type: String,
+            ref: 'TransactionType',
+        },
     },
     { timestamps: true }
 )

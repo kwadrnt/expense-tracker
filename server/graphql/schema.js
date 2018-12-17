@@ -3,6 +3,7 @@ const { GraphQLObjectType, GraphQLSchema } = require('graphql')
 const { accountMutations, accountQueries } = require('./queries/account')
 const { categoryQueries } = require('./queries/category')
 const { transactionMutations, transactionQueries } = require('./queries/transaction')
+const { transactionTypeQueries } = require('./queries/transactionType')
 
 module.exports = new GraphQLSchema({
     mutation: new GraphQLObjectType({
@@ -18,6 +19,7 @@ module.exports = new GraphQLSchema({
             ...accountQueries,
             ...categoryQueries,
             ...transactionQueries,
+            ...transactionTypeQueries,
         },
     }),
 })
