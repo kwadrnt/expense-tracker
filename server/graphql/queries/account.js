@@ -1,10 +1,10 @@
 const { GraphQLList, GraphQLNonNull } = require('graphql')
 
 const {
-    getAccount,
-    getAccounts,
     createAccount,
     deleteAccount,
+    getAccount,
+    getAccounts,
     updateAccount,
 } = require('../resolvers/account')
 

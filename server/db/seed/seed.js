@@ -39,7 +39,15 @@ async function parseTransactionsForAccounts({ expenses, income, transfers }) {
         accounts.push(item.accountsTo)
     })
 
-    return uniq(accounts).map((account) => ({ name: account, id: uuid() }))
+    let uniqAccounts = []
+
+    uniq(accounts).forEach((account) => {
+        if (account) {
+            uniqAccounts.push({ name: account, id: uuid() })
+        }
+    })
+
+    return uniqAccounts
 }
 
 async function createCategories(csvTransactions) {
@@ -106,13 +114,14 @@ function createTransactionObject(transaction, transactionType, mongooseDB) {
     const { accounts, categories, transactionTypes } = mongooseDB
 
     return {
+        id: uuid(),
         date,
         description,
         category: get(find(categories, { name: category }), 'id', null),
         accountFrom: get(find(accounts, { name: accountFrom }), 'id', null),
         price: price.replace('$ ', ''),
-        transactionType: get(find(transactionTypes, { name: transactionType }), 'id', null),
         accountTo: get(find(accounts, { name: accountTo }), 'id', null),
+        type: get(find(transactionTypes, { name: transactionType }), 'id', null),
     }
 }
 

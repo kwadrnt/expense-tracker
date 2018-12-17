@@ -8,7 +8,8 @@
         "lint": "eslint .",
         "lint-fix": "eslint --fix .",
         "seed": "node ./server/db/seed/seed.js",
-        "start": "concurrently -n mongo,server,webpack \"mongod\" \"node ./server/index.js\" \"webpack-dev-server --mode development --open --hot\""
+        "dropdb": "mongo expense-tracker --eval \"db.dropDatabase()\"",
+        "start": "concurrently -n mongo,server,webpack \"mongod\" \"nodemon ./server/index.js\" \"webpack-dev-server --mode development --open --hot\""
     },
     "husky": {
         "hooks": {

@@ -12,9 +12,9 @@ const { getTransactions } = require('../resolvers/category')
 // ****************
 // Constructor Type
 // ****************
-const CategoryType = new GraphQLObjectType({
-    name: 'Category',
-    description: 'This represents a category',
+const TransactionTypeType = new GraphQLObjectType({
+    name: 'TransactionType',
+    description: 'Either EXPENSE, INCOME, or TRANSFER',
     fields: () => {
         const { TransactionType } = require('./transaction')
 
@@ -33,15 +33,15 @@ const CategoryType = new GraphQLObjectType({
 // ***********
 // Input Types
 // ***********
-const CategoryQueryInputType = new GraphQLInputObjectType({
-    name: 'CategoryQueryInputType',
-    description: 'Category payload definition for queries',
+const TransactionTypeQueryInputType = new GraphQLInputObjectType({
+    name: 'TransactionTypeQueryInputType',
+    description: 'Transaction type payload definition for queries',
     fields: () => ({
         id: { type: new GraphQLNonNull(GraphQLID) },
     }),
 })
 
 module.exports = {
-    CategoryType,
-    CategoryQueryInputType,
+    TransactionTypeType,
+    TransactionTypeQueryInputType,
 }

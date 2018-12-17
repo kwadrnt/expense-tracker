@@ -53,7 +53,7 @@ const AccountQueryInputType = new GraphQLInputObjectType({
     name: 'AccountQueryInputType',
     description: 'Account payload definition for queries',
     fields: () => ({
-        id: { type: GraphQLID },
+        id: { type: new GraphQLNonNull(GraphQLID) },
     }),
 })
 

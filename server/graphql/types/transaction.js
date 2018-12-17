@@ -8,7 +8,7 @@ const {
 } = require('graphql')
 const { GraphQLDate } = require('graphql-iso-date')
 
-const { getAccount } = require('../resolvers/Transaction')
+const { getAccount, getCategory, getTransactionType } = require('../resolvers/Transaction')
 
 // ****************
 // Constructor Type
@@ -19,6 +19,7 @@ const TransactionType = new GraphQLObjectType({
     fields: () => {
         const { AccountType } = require('./account')
         const { CategoryType } = require('./category')
+        const { TransactionTypeType } = require('./transactionType')
 
         return {
             id: { type: new GraphQLNonNull(GraphQLID) },
@@ -35,12 +36,16 @@ const TransactionType = new GraphQLObjectType({
             category: {
                 type: CategoryType,
                 description: 'The category this transacton is under',
-                resolve: () => ({}),
+                resolve: (ownProps) => getCategory(ownProps.category),
             },
             date: { type: new GraphQLNonNull(GraphQLDate) },
             description: { type: GraphQLString },
             price: { type: new GraphQLNonNull(GraphQLFloat) },
-            type: { type: new GraphQLNonNull(GraphQLString) },
+            type: { 
+                type: TransactionTypeType,
+                description: 'Transaction type',
+                resolve: (ownProps) => getTransactionType(ownProps.type),
+            },
         }
     },
 })
