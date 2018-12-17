@@ -1,4 +1,4 @@
-const { GraphQLList, GraphQLNonNull } = require('graphql')
+const { GraphQLNonNull } = require('graphql')
 
 const { getTransactionType } = require('../resolvers/transactionType')
 const { TransactionTypeType, TransactionTypeQueryInputType } = require('../types/transactionType')

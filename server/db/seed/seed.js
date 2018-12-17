@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 const csv = require('csvtojson')
 const uuid = require('uuid/v4')
 const uniq = require('lodash/uniq')
-const uniqBy = require('lodash/uniqBy')
 const find = require('lodash/find')
 const get = require('lodash/get')
 
@@ -30,7 +29,7 @@ async function createAccounts(csvTransactions) {
 }
 
 async function parseTransactionsForAccounts({ expenses, income, transfers }) {
-    let accounts = []
+    const accounts = []
 
     expenses.forEach((item) => { accounts.push(item.accountFrom) })
     income.forEach((item) => { accounts.push(item.accountFrom) })
@@ -39,7 +38,7 @@ async function parseTransactionsForAccounts({ expenses, income, transfers }) {
         accounts.push(item.accountsTo)
     })
 
-    let uniqAccounts = []
+    const uniqAccounts = []
 
     uniq(accounts).forEach((account) => {
         if (account) {
@@ -57,7 +56,7 @@ async function createCategories(csvTransactions) {
 }
 
 async function parseTransactionsForCategories({ expenses, income }) {
-    let categories = []
+    const categories = []
 
     expenses.forEach((item) => { categories.push(item.category) })
     income.forEach((item) => { categories.push(item.category) })
@@ -66,7 +65,7 @@ async function parseTransactionsForCategories({ expenses, income }) {
 }
 
 async function createTransactionTypes() {
-    const transactionTypes = [ 
+    const transactionTypes = [
         { name: 'EXPENSE', id: uuid() },
         { name: 'INCOME', id: uuid() },
         { name: 'TRANSFER', id: uuid() },
@@ -75,9 +74,8 @@ async function createTransactionTypes() {
     await TransactionTypes.create(transactionTypes)
 }
 
-
 async function createTranscations({ expenses, income, transfers }) {
-    let transactions = []
+    const transactions = []
 
     const accounts = await Accounts.find()
     const categories = await Categories.find()
@@ -104,9 +102,6 @@ async function createTranscations({ expenses, income, transfers }) {
     })
 
     await Transactions.create(transactions)
-        .catch((err) => {
-            console.log('err: ', err)
-        })
 }
 
 function createTransactionObject(transaction, transactionType, mongooseDB) {
@@ -124,7 +119,6 @@ function createTransactionObject(transaction, transactionType, mongooseDB) {
         type: get(find(transactionTypes, { name: transactionType }), 'id', null),
     }
 }
-
 
 async function seedDatabase() {
     mongoose.connect('mongodb://localhost:27017/expense-tracker', { useNewUrlParser: true })

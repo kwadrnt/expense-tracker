@@ -6,6 +6,7 @@ const getCategories = () => Categories.find()
 const getTransactions = (ownProps) => Transactions.find({ category: ownProps.id })
 
 module.exports = {
+    getCategory,
     getCategories,
     getTransactions,
 }

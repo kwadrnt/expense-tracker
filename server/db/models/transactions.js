@@ -21,7 +21,7 @@ const transactionSchema = new Schema(
         price: Number,
         type: {
             type: String,
-            ref: 'TransactionType'
+            ref: 'TransactionType',
         },
     },
     { timestamps: true }

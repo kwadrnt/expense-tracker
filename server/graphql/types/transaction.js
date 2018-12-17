@@ -41,7 +41,7 @@ const TransactionType = new GraphQLObjectType({
             date: { type: new GraphQLNonNull(GraphQLDate) },
             description: { type: GraphQLString },
             price: { type: new GraphQLNonNull(GraphQLFloat) },
-            type: { 
+            type: {
                 type: TransactionTypeType,
                 description: 'Transaction type',
                 resolve: getTransactionType,
