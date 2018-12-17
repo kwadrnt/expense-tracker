@@ -7,10 +7,10 @@ const TransactionTypes = require('../../db/models/transactionTypes')
 
 const createTransaction = (_, { input }) => Transactions.create({ ...input, id: uuid() })
 const deleteTransaction = (_, { input }) => Transactions.findOneAndDelete({ id: input.id })
-const getAccount = (id) => Accounts.findOne({ id })
-const getCategory = (id) => Categories.findOne({ id })
+const getAccount = (ownProps, accountType) => Accounts.findOne({ id: ownProps[accountType] })
+const getCategory = ({ category }) => Categories.findOne({ id: category })
 const getTransaction = (_, { input }) => Transactions.findOne({ id: input.id })
-const getTransactionType = (id) => TransactionTypes.findOne({ id })
+const getTransactionType = ({ type }) => TransactionTypes.findOne({ id: type })
 const getTransactions = () => Transactions.find()
 const updateTransaction = (_, { input }) => Transactions.findOneAndUpdate({ id: input.id }, input, { new: true })
 

@@ -26,17 +26,17 @@ const TransactionType = new GraphQLObjectType({
             accountFrom: {
                 type: new GraphQLNonNull(AccountType),
                 description: 'The account this transacton happens applies to',
-                resolve: (ownProps) => ownProps.accountFrom ? getAccount(ownProps.accountFrom) : null,
+                resolve: (ownProps) => getAccount(ownProps, 'accountFrom'),
             },
             accountTo: {
                 type: AccountType,
                 description: 'The account this transacton transfer expense to',
-                resolve: (ownProps) => ownProps.accountTo ? getAccount(ownProps.accountTo) : null,
+                resolve: (ownProps) => getAccount(ownProps, 'accountTo'),
             },
             category: {
                 type: CategoryType,
                 description: 'The category this transacton is under',
-                resolve: (ownProps) => getCategory(ownProps.category),
+                resolve: getCategory,
             },
             date: { type: new GraphQLNonNull(GraphQLDate) },
             description: { type: GraphQLString },
@@ -44,7 +44,7 @@ const TransactionType = new GraphQLObjectType({
             type: { 
                 type: TransactionTypeType,
                 description: 'Transaction type',
-                resolve: (ownProps) => getTransactionType(ownProps.type),
+                resolve: getTransactionType,
             },
         }
     },
