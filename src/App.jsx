@@ -15,9 +15,9 @@ import './app.module.scss'
 
 const App = () => (
     <ApolloProvider client={getApolloClient()}>
-        <Container>
+        <Container className={'h-100'}>
             <BrowserRouter>
-                <div>
+                <React.Fragment>
                     <Header />
 
                     <Switch>
@@ -29,7 +29,7 @@ const App = () => (
 
                         <Redirect from={'*'} to={'/'} />
                     </Switch>
-                </div>
+                </React.Fragment>
             </BrowserRouter>
         </Container>
     </ApolloProvider>

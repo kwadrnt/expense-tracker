@@ -4,6 +4,12 @@
         font-weight: 500;
     }
 
+    body,
+    html,
+    div#root {
+        height: 100%;
+    }
+
     a {
         text-decoration: none;
     }
