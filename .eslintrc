@@ -27,7 +27,6 @@
         'comma-spacing': [ 'warn', { 'before': false, 'after': true } ],
         'eol-last': [ 'error', 'always' ],
         'func-call-spacing': [ 'error', 'never' ],
-        'function-paren-newline': [ 'error', 'multiline' ],
         'implicit-arrow-linebreak': [ 'error', 'beside' ],
         'key-spacing': [ 'error', { 'beforeColon': false, 'afterColon': true, 'mode': 'strict' } ],
         'no-console': 'warn',
@@ -45,5 +44,18 @@
         'no-var': 'error',
         'object-shorthand': 'warn',
         'prefer-const': [ 'warn', { 'destructuring': 'any' } ],
+
+        // React
+        'react/no-unused-prop-types': 'warn',
+        'react/prop-types': ['error', { 'ignore': [ 'children' ] }],
+        'react/self-closing-comp': 'error',
+        'react/jsx-equals-spacing': ['error', 'never'],
+        'react/jsx-filename-extension': ['warn', { 'extensions': ['.js', '.jsx'] }],
+        'react/jsx-key': 'warn',
+        'react/jsx-first-prop-new-line': ['warn', 'multiline'],
+        'react/jsx-curly-brace-presence': ['warn', { 'props': 'always', 'children': 'ignore' }],
+        'react/jsx-props-no-multi-spaces': 'warn',
+        'react/jsx-tag-spacing': ['warn', { 'closingSlash': 'never', 'beforeSelfClosing': 'always', 'afterOpening': 'never', 'beforeClosing': 'never'}],
+        'react/jsx-uses-vars': 'warn',
     },
 }

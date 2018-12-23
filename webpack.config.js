@@ -39,6 +39,7 @@ module.exports = {
             containers: path.resolve('src/containers'),
             queries: path.resolve('src/queries'),
             routes: path.resolve('src/routes'),
+            types: path.resolve('src/types'),
             utils: path.resolve('src/utils'),
         },
         extensions: [ '.js', '.jsx' ],
