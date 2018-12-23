@@ -2,6 +2,8 @@ import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 import get from 'lodash/get'
 
+import transformAccount from 'queries/utils/transformAccount'
+
 const getAccounts = gql`
     query {
         getAccounts {
@@ -17,7 +19,10 @@ const getAccounts = gql`
                     name
                 }
                 price
-                type
+                type {
+                    id
+                    name
+                }
             }
         }
     }
@@ -26,7 +31,7 @@ export const withAccountsQuery = () => graphql(getAccounts, {
     alias: 'getAccounts',
     props: ({ data }) => {
         return {
-            accounts: get(data, 'getAccounts'),
+            accounts: transformAccount(get(data, 'getAccounts')),
         }
     },
 })

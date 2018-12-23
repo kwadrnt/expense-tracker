@@ -1,13 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import Container from 'common/Container'
+import AccountFromQueryType from 'types/accountFromQuery'
 
 const AccountsPage = ({ accounts }) => (
-    <Container>
-        {accounts && accounts.map((account) => (
-            <div key={account.id}>{account.name}</div>
+    <div>
+        {accounts && accounts.map(({ id, name }) => (
+            <div key={id}>{name}</div>
         ))}
-    </Container>
+    </div>
 )
+
+AccountsPage.propTypes = {
+    accounts: PropTypes.arrayOf(AccountFromQueryType),
+}
 
 export default AccountsPage
