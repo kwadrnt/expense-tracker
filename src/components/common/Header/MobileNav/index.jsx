@@ -18,18 +18,15 @@ class MobileNav extends React.Component {
 
     render() {
         const { open } = this.state
-
-        console.log('open: ', open)
+        const { className } = this.props
 
         return (
-            <div>
-                <div 
-                    className={'ph3'}
-                    onClick={this.toggleButton}>
-                    <div className={cx(open && styles.change, styles.hamburgerOne)}/>
-                    <div className={cx(open && styles.change, styles.hamburgerTwo)}/>
-                    <div className={cx(open && styles.change, styles.hamburgerThree)}/>
-                </div>
+            <div 
+                className={cx(className, 'ph3')}
+                onClick={this.toggleButton}>
+                <div className={cx(open && styles.change, styles.hamburgerOne)}/>
+                <div className={cx(open && styles.change, styles.hamburgerTwo)}/>
+                <div className={cx(open && styles.change, styles.hamburgerThree)}/>
             </div>
         )
     }

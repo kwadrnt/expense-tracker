@@ -11,7 +11,7 @@ import styles from './header.module.scss'
 const Header = () => (
     <div>
         <div className={cx(styles.banner, 'bg-red flex items-center justify-end')}>
-            <MobileNav />
+            <MobileNav className={'dn-ns'} />
         </div>
 
         <div className={cx(styles.navBar, 'dn flex-ns flex-row')}>
