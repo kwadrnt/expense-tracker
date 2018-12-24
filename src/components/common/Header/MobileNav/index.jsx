@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 import menuItems from 'constants/menuItems'
@@ -16,7 +17,7 @@ class MobileNav extends React.Component {
     }
 
     toggleButton() {
-        this.setState(({ open }) => ({ open: !open }));
+        this.setState(({ open }) => ({ open: !open }))
     }
 
     render() {
@@ -25,12 +26,12 @@ class MobileNav extends React.Component {
 
         return (
             <div className={cx(className, 'overflow-x-hidden')}>
-                <div 
+                <div
                     className={'ph3'}
                     onClick={this.toggleButton}>
-                    <div className={cx(open && styles.change, styles.hamburgerOne)}/>
-                    <div className={cx(open && styles.change, styles.hamburgerTwo)}/>
-                    <div className={cx(open && styles.change, styles.hamburgerThree)}/>
+                    <div className={cx(open && styles.change, styles.hamburgerOne)} />
+                    <div className={cx(open && styles.change, styles.hamburgerTwo)} />
+                    <div className={cx(open && styles.change, styles.hamburgerThree)} />
                 </div>
 
                 <div className={cx(open && styles.show, styles.menu, 'bg-white b')}>
@@ -45,6 +46,10 @@ class MobileNav extends React.Component {
             </div>
         )
     }
+}
+
+MobileNav.propTypes = {
+    className: PropTypes.string,
 }
 
 export default MobileNav
