@@ -37,8 +37,8 @@ class MobileNav extends React.Component {
                 <div className={cx(open && styles.show, styles.menu, 'bg-white b')}>
                     {
                         menuItems.map(({ path, name }) => (
-                            <Link key={path} to={path}>
-                                <div className={cx(styles.navItem, 'flex items-center ph4 pv3')}>{name}</div>
+                            <Link key={path} to={path} onClick={this.toggleButton}>
+                                <div className={cx(styles.navItem, 'flex items-center bb mh3 ph2 pv3')}>{name}</div>
                             </Link>
                         ))
                     }
