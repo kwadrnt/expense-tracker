@@ -4,7 +4,7 @@ import cx from 'classnames'
 
 import MobileNav from './MobileNav'
 
-import { ACCOUNTS_PATH } from 'constants/urls'
+import menuItems from 'constants/menuItems'
 
 import styles from './header.module.scss'
 
@@ -15,9 +15,13 @@ const Header = () => (
         </div>
 
         <div className={cx(styles.navBar, 'dn flex-ns flex-row')}>
-            <Link to={ACCOUNTS_PATH}>
-                <div className={cx(styles.navItem, 'h-100 flex items-center ph3')}>Accounts</div>
-            </Link>
+            {
+                menuItems.map(({ path, name }) => (
+                    <Link key={path} to={path}>
+                        <div className={cx(styles.navItem, 'h-100 flex items-center ph3')}>{name}</div>
+                    </Link>
+                ))
+            }
         </div>
     </div>
 )
