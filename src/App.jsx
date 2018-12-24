@@ -7,6 +7,8 @@ import routes from 'routes'
 import Container from 'components/common/Container'
 import Header from 'components/common/Header'
 
+import AccountsPageContainer from 'containers/AccountsPage'
+
 import { BASE_PATH, ACCOUNTS_PATH } from 'constants/urls'
 
 import { getApolloClient } from 'utils/apollo'
@@ -23,9 +25,7 @@ const App = () => (
                     <Switch>
                         <Redirect exact from={BASE_PATH} to={ACCOUNTS_PATH} />
 
-                        {routes.map((route, idx) => (
-                            <Route key={idx} exact {...route} />
-                        ))}
+                        <Route exact to={ACCOUNTS_PATH} component={AccountsPageContainer} />
 
                         <Redirect from={'*'} to={'/'} />
                     </Switch>
