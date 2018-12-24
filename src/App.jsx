@@ -2,8 +2,6 @@ import React from 'react'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 
-import routes from 'routes'
-
 import Container from 'components/common/Container'
 import Header from 'components/common/Header'
 
