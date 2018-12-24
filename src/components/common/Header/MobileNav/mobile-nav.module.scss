@@ -1,0 +1,31 @@
+.hamburger {
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.hamburgerOne {
+    @extend .hamburger;
+
+    &.change {
+        transform: rotate(-45deg) translate(-7px, 4px);
+    }
+}
+
+.hamburgerTwo {
+    @extend .hamburger;
+
+    &.change {
+        opacity: 0;
+    }
+}
+
+.hamburgerThree {
+    @extend .hamburger;
+
+    &.change {
+        transform: rotate(45deg) translate(-8px, -6px);
+    }
+}

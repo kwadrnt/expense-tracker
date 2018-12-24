@@ -4,10 +4,11 @@
     "description": "",
     "main": "./server/index.js",
     "scripts": {
+        "cleanInstall": "rm -rf ./node_modules && npm install",
+        "dropdb": "mongo expense-tracker --eval \"db.dropDatabase()\"",
         "lint": "eslint --ext .js --ext .jsx .",
         "lint-fix": "eslint --ext .js --ext .jsx --fix .",
         "seed": "node ./server/db/seed/seed.js",
-        "dropdb": "mongo expense-tracker --eval \"db.dropDatabase()\"",
         "start": "concurrently -n mongo,server,webpack \"mongod\" \"nodemon ./server/index.js\" \"webpack-dev-server --mode development --open --hot\""
     },
     "husky": {
