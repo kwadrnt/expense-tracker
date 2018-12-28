@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-import menuItems from 'constants/menuItems'
+import AccountFromQueryType from 'types/accountFromQuery'
+
+import { formatCurrency } from 'utils/numbers'
 
 import styles from './mobile-nav.module.scss'
 
@@ -22,7 +24,7 @@ class MobileNav extends React.Component {
 
     render() {
         const { open } = this.state
-        const { className } = this.props
+        const { className, accounts } = this.props
 
         return (
             <div className={cx(className, 'overflow-x-hidden')}>
@@ -34,14 +36,22 @@ class MobileNav extends React.Component {
                     <div className={cx(open && styles.change, styles.hamburgerThree)} />
                 </div>
 
-                <div className={cx(open && styles.show, styles.menu, 'bg-white b')}>
-                    {
-                        menuItems.map(({ path, name }) => (
-                            <Link key={path} to={path} onClick={this.toggleButton}>
-                                <div className={cx(styles.navItem, 'flex items-center bb mh3 ph2 pv3')}>{name}</div>
-                            </Link>
-                        ))
-                    }
+                <div className={cx(open && styles.show, styles.menu, 'bg-white')}>
+                    <div>
+                        <div className={cx(styles.navItem, 'flex items-center bb pa3')}>Accounts</div>
+                        <div>
+                            {accounts.map(({ id, name, balance }) => (
+                                <Link
+                                    key={id}
+                                    to={`/accounts/${id}`}
+                                    className={cx(styles.navItem, 'flex items-center justify-between bb pv3 ph4')}
+                                    onClick={this.toggleButton}>
+                                        <div>{name}</div>
+                                        <div>{formatCurrency(balance)}</div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -49,6 +59,7 @@ class MobileNav extends React.Component {
 }
 
 MobileNav.propTypes = {
+    accounts: PropTypes.arrayOf(AccountFromQueryType),
     className: PropTypes.string,
 }
 
