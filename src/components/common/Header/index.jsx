@@ -1,8 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 import MobileNav from './MobileNav'
+
+import { ACCOUNTS_PATH } from 'constants/urls'
 
 import AccountFromQueryType from 'types/accountFromQuery'
 
@@ -15,7 +18,9 @@ const Header = ({ accounts }) => (
         </div>
 
         <div className={cx(styles.navBar, 'dn flex-ns flex-row')}>
-            asdf
+            <Link to={ACCOUNTS_PATH}>
+                <div className={cx(styles.navItem, 'h-100 flex items-center ph3')}>Accounts</div>
+            </Link>
         </div>
     </div>
 )
