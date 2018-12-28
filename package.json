@@ -9,7 +9,8 @@
         "lint": "eslint --ext .js --ext .jsx .",
         "lint-fix": "eslint --ext .js --ext .jsx --fix .",
         "seed": "node ./server/db/seed/seed.js",
-        "start": "concurrently -n mongo,server,webpack \"mongod\" \"nodemon ./server/index.js\" \"webpack-dev-server --mode development --open --hot\""
+        "start": "concurrently -n mongo,server,webpack \"mongod\" \"nodemon ./server/index.js\" \"webpack-dev-server --mode development --open --hot\"",
+        "start:back": "nodemon ./server/index.js"
     },
     "husky": {
         "hooks": {
