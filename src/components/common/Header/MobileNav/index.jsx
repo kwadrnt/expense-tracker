@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
+import { ACCOUNTS_PATH } from 'constants/urls'
+
 import AccountFromQueryType from 'types/accountFromQuery'
 
 import { formatCurrency } from 'utils/numbers'
@@ -37,20 +39,22 @@ class MobileNav extends React.Component {
                 </div>
 
                 <div className={cx(open && styles.show, styles.menu, 'bg-white')}>
-                    <div>
-                        <div className={cx(styles.navItem, 'flex items-center bb pa3')}>Accounts</div>
-                        <div>
-                            {accounts.map(({ id, name, balance }) => (
-                                <Link
-                                    key={id}
-                                    to={`/accounts/${id}`}
-                                    className={cx(styles.navItem, 'flex items-center justify-between bb pv3 ph4')}
-                                    onClick={this.toggleButton}>
-                                        <div>{name}</div>
-                                        <div>{formatCurrency(balance)}</div>
-                                </Link>
-                            ))}
-                        </div>
+                    <div onClick={this.toggleButton}>
+                        <Link
+                            to={ACCOUNTS_PATH}
+                            className={cx(styles.navItem, 'flex items-center bb pa3')}>
+                            Accounts
+                        </Link>
+
+                        {accounts.map(({ id, name, balance }) => (
+                            <Link
+                                key={id}
+                                to={`/accounts/${id}`}
+                                className={cx(styles.navItem, 'flex items-center justify-between bb pv3 ph4')}>
+                                    <div>{name}</div>
+                                    <div>{formatCurrency(balance)}</div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
