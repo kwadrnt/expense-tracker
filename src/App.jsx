@@ -22,6 +22,7 @@ const App = () => (
                 <Switch>
                     <Redirect exact from={BASE_PATH} to={ACCOUNTS_PATH} />
                     <Route exact path={ACCOUNTS_PATH} component={AccountsPageContainer} />
+                    <Route exact path={'/accounts/:id'} component={(props) => (<div>{props.match.params.id}</div>)} />
                     <Route component={() => (<div>not found</div>)} />
                 </Switch>
             </Container>
