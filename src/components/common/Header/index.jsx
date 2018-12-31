@@ -37,9 +37,7 @@ class Header extends React.Component {
                 </div>
 
                 <div className={cx(styles.navBar, 'dn flex-ns flex-row')}>
-                    <div
-                        className={'relative pointer'}
-                        onClick={this.toggleMenu}>
+                    <div className={'relative pointer'} onClick={this.toggleMenu}>
                         <div className={cx(open && 'bg-white', styles.navItem, 'h-100 flex items-center ph3')}>Accounts</div>
 
                         <div className={cx(open ? 'flex' : 'dn', styles.menu, 'absolute flex-column bg-white shadow-5 pt2')}>
