@@ -1,8 +1,10 @@
+@import 'variables';
+
 .container {
     border-top: 3px solid blue;
 
-    @media (min-width: 768px) {
-        max-width: 768px;
+    @media (min-width: $tablet-breakpoint) {
+        max-width: $tablet-breakpoint;
         margin-left: auto;
         margin-right: auto;
     }
