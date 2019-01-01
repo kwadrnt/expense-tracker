@@ -1,0 +1,11 @@
+@import 'styles/variables';
+
+:global {
+    .fitScreen {
+        min-height: calc(100vh - #{$mobileNavBarHeight});
+
+        @media (min-width: $tachyons-breakpoint-s) {
+            min-height: calc(100vh - #{$navBarHeight});
+        }
+    }
+}

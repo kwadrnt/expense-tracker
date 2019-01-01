@@ -1,3 +1,5 @@
+@import '../../../../styles/variables';
+
 .hamburger {
     width: 28px;
     height: 3px;
@@ -33,9 +35,9 @@
 .menu {
     /* 75px is the height of the header */
     /* update as needed */
-    height: calc(100vh - 75px);
+    height: calc(100vh - #{$mobileNavBarHeight});
     position: absolute;
-    top: 75px;
+    top: $mobileNavBarHeight;
     left: -100vh;
     width: 100vw;
     transition: 0.4s;
