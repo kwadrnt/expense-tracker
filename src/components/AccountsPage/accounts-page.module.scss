@@ -1,0 +1,17 @@
+.container {
+    border-top: 3px solid blue;
+
+    @media (min-width: 768px) {
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.accountItem {
+    background-color: #d5d9db;
+
+    &:not(:last-of-type) {
+        border-bottom: 3px solid white;
+    }
+}
