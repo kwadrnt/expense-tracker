@@ -5,6 +5,8 @@ const uniq = require('lodash/uniq')
 const find = require('lodash/find')
 const get = require('lodash/get')
 
+const { LOCAL_ENDPOINT, ALT_LOCAL_ENDPOINT } = require('../constants/endpoints')
+
 const Accounts = require('../models/accounts')
 const Transactions = require('../models/transactions')
 const Categories = require('../models/categories')
@@ -121,7 +123,9 @@ function createTransactionObject(transaction, transactionType, mongooseDB) {
 }
 
 async function seedDatabase() {
-    mongoose.connect('mongodb://localhost:27017/expense-tracker', { useNewUrlParser: true })
+    mongoose.connect(LOCAL_ENDPOINT, { useNewUrlParser: true })
+        .catch(() => { mongoose.connect(ALT_LOCAL_ENDPOINT, { useNewUrlParser: true }) })
+
     const csvTransactions = await readFiles()
     await createAccounts(csvTransactions)
     await createCategories(csvTransactions)

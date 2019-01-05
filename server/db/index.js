@@ -1,6 +1,13 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.DB_ENDPOINT)
+const { LOCAL_ENDPOINT, ALT_LOCAL_ENDPOINT } = require('./constants/endpoints')
+
+const mongoHost = process.env.DB_ENDPOINT || LOCAL_ENDPOINT
+
+mongoose.connect(mongoHost)
+    .catch(() => {
+        if (mongoHost === LOCAL_ENDPOINT) { mongoose.connect(ALT_LOCAL_ENDPOINT) }
+    })
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'Connection ERROR: ')) // eslint-disable-line no-console
