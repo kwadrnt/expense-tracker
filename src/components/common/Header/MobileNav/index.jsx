@@ -26,7 +26,7 @@ class MobileNav extends React.Component {
 
     render() {
         const { open } = this.state
-        const { className, accounts } = this.props
+        const { className, accounts, toggleModal } = this.props
 
         return (
             <div className={cx(className, 'overflow-x-hidden')}>
@@ -39,10 +39,11 @@ class MobileNav extends React.Component {
                 </div>
 
                 <div className={cx(open && styles.show, styles.menu, 'bg-white')}>
-                    <div onClick={this.toggleButton}>
+                    <div>
                         <Link
                             to={ACCOUNTS_PATH}
-                            className={cx(styles.navItem, 'flex items-center bb pa3')}>
+                            className={cx(styles.navItem, 'flex items-center bb pa3')}
+                            onClick={this.toggleButton}>
                             Accounts
                         </Link>
 
@@ -50,11 +51,18 @@ class MobileNav extends React.Component {
                             <Link
                                 key={id}
                                 to={`/accounts/${id}`}
-                                className={cx(styles.navItem, 'flex items-center justify-between bb pv3 ph4')}>
+                                className={cx(styles.navItem, 'flex items-center justify-between bb pv3 ph4')}
+                                onClick={this.toggleButton}>
                                     <div>{name}</div>
                                     <div>{formatCurrency(balance)}</div>
                             </Link>
                         ))}
+
+                        <div
+                            className={'flex items-center justify-between pv3 mh4'}
+                            onClick={toggleModal}>
+                            Add account
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,6 +73,7 @@ class MobileNav extends React.Component {
 MobileNav.propTypes = {
     accounts: PropTypes.arrayOf(AccountFromQueryType),
     className: PropTypes.string,
+    toggleModal: PropTypes.func.isRequired,
 }
 
 export default MobileNav

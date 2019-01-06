@@ -13,7 +13,7 @@ const Modal = ({
     children,
 }) => {
     return (
-        <ReactModal 
+        <ReactModal
             isOpen={isOpen}
             onRequestClose={onClose}
             contentLabel={contentLabel}
@@ -23,7 +23,7 @@ const Modal = ({
                     bottom: '0px',
                     right: '0px',
                     left: '0px',
-                    padding: '0px'
+                    padding: '0px',
                 },
             }}
             shouldFocusAfterRender={true}
