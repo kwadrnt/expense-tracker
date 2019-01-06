@@ -1,0 +1,14 @@
+:global {
+    .ReactModal__Content {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        @media (min-width: 768px) {
+            width: 768px;
+            height: 75vh;
+            margin: auto;
+        }
+    }
+}
