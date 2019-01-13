@@ -11,6 +11,7 @@ export function getApolloClient() {
             cache: new InMemoryCache(),
             connectToDevTools: true,
             queryDeduplication: true,
+            dataIdFromObject: o => o.id,
         })
     }
 

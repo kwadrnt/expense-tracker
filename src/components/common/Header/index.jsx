@@ -5,7 +5,7 @@ import cx from 'classnames'
 
 import MobileNav from './MobileNav'
 
-import AddAccountModal from 'common/AddAccountModal'
+import AddAccountModalContainer from 'containers/common/AddAccountModal'
 
 import { ACCOUNTS_PATH } from 'constants/urls'
 
@@ -83,7 +83,7 @@ class Header extends React.Component {
                     </div>
                 </div>
 
-                <AddAccountModal isOpen={modalIsOpen} onClose={this.toggleModal} />
+                <AddAccountModalContainer isOpen={modalIsOpen} onClose={this.toggleModal} />
             </div>
         )
     }

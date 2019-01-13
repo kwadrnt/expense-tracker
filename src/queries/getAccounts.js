@@ -4,7 +4,7 @@ import get from 'lodash/get'
 
 import transformAccount from 'queries/utils/transformAccount'
 
-const getAccounts = gql`
+export const getAccounts = gql`
     query {
         getAccounts {
             id
