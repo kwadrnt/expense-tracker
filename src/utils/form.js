@@ -1,5 +1,5 @@
 export const serializeData = (event) => {
-    let data = {}
+    const data = {}
 
     const formItems = Array.from(event.target)
 

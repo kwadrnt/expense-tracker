@@ -16,7 +16,7 @@ const AddAccountModalContainer = compose(
             const data = serializeData(event)
             createAccount(data)
                 .then(onClose)
-        }
+        },
     })
 )(AddAccountModal)
 
